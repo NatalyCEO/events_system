@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Макеты ЛК мероприятий · ЛЭТИ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=reg2" />
+</head>
+<body>
+  <div class="preview-bar">
+    <div class="tabs" id="tabs"></div>
+  </div>
+
+  <!-- КАТАЛОГ -->
+  <section class="screen on" id="p-catalog" data-role="applicant">
+    <div class="wrap">
+      <div class="hero">
+        <div>
+          <h2>Приходите в<br /><em>Первый электротехнический</em></h2>
+          <p>Экскурсии, встречи с факультетами и дни открытых дверей — чтобы увидеть ЛЭТИ своими глазами.</p>
+          <div class="search">
+            <input placeholder="Название, дата, формат…" />
+            <button>Найти</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <span class="chip">Ближайшее · 12 баллов</span>
+          <h3>День открытых дверей ЛЭТИ</h3>
+          <div class="meta">14 декабря 2026 · 11:00–16:00 · ул. Профессора Попова, 5</div>
+          <div class="row" style="margin-top:14px">
+            <button class="btn btn-gold" onclick="go('p-event')">Записаться</button>
+            <span>осталось 86 мест</span>
+          </div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>7</b><span>факультетов — живые встречи, а не только буклет</span></div>
+        <div class="stat"><b>3</b><span>формата: очно, онлайн и смешанный</span></div>
+        <div class="stat"><b>12</b><span>экскурсий и мастер-классов в программе</span></div>
+      </div>
+      <div class="hrow">
+        <h3>Мероприятия</h3>
+        <div class="pills">
+          <button class="pill on">Все</button>
+          <button class="pill">Очно</button>
+          <button class="pill">Онлайн</button>
+          <button class="pill">Есть места</button>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card" onclick="go('p-event')">
+          <div class="cover c1"><div class="date-badge"><b>14</b><span>ДЕК</span></div></div>
+          <div class="card-body">
+            <div class="badges"><span class="b b-blue">Очно</span><span class="b b-gold">12 баллов</span><span class="b b-gold">сертификат</span></div>
+            <h4>День открытых дверей ЛЭТИ</h4>
+            <div class="place">ул. Профессора Попова, 5 · 11:00–16:00</div>
+            <div class="card-foot"><span>осталось 86 мест</span><span class="b b-ok">запись открыта</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="cover c2"><div class="date-badge"><b>21</b><span>ДЕК</span></div></div>
+          <div class="card-body">
+            <div class="badges"><span class="b b-blue">Онлайн</span><span class="b b-gold">5 баллов</span></div>
+            <h4>Вечер факультетов</h4>
+            <div class="place">онлайн · 18:00–20:00</div>
+            <div class="card-foot"><span>мест нет</span><span class="b b-wait">лист ожидания</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="cover c3"><div class="date-badge"><b>18</b><span>ЯНВ</span></div></div>
+          <div class="card-body">
+            <div class="badges"><span class="b b-blue">Смешанный</span><span class="b b-gold">сертификат</span></div>
+            <h4>Мастер-классы для 10–11 классов</h4>
+            <div class="place">ЛЭТИ + трансляция · 12:00–15:00</div>
+            <div class="card-foot"><span>без ограничения мест</span><span class="b b-ok">запись открыта</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="say">
+        <img src="assets/cat-wave.jpg" alt="" />
+        <div class="bubble">До встречи в ЛЭТИ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- МЕРОПРИЯТИЕ -->
+  <section class="screen" id="p-event" data-role="applicant">
+    <div class="wrap">
+      <div class="event-hero">
+        <div class="badges"><span class="b b-gold">12 баллов</span><span class="b b-gold">сертификат</span><span class="b" style="background:#fff;color:#023370">Очно</span></div>
+        <h2>День открытых дверей ЛЭТИ</h2>
+      </div>
+      <div class="cols">
+        <div>
+          <div class="panel">
+            <h3>О мероприятии</h3>
+            <p>Экскурсии по корпусам, встречи с преподавателями, консультации приёмной комиссии. Можно прийти с родителями.</p>
+          </div>
+          <div class="panel">
+            <h3>Экскурсии</h3>
+            <div class="tour">
+              <strong>Главный корпус</strong>
+              <p>Маршрут по холлу, аудиториям и исторической лестнице. Рассказ о том, как устроена учёба на первом курсе.</p>
+              <span class="place">11:00 и 13:00 · около 40 минут</span>
+            </div>
+            <div class="tour">
+              <strong>Лаборатории и факультеты</strong>
+              <p>Короткие заходы в учебные лаборатории: радиотехника, электроника, информационные системы. Можно задать вопросы студентам.</p>
+              <span class="place">в течение дня · группы по 15 человек</span>
+            </div>
+            <div class="tour">
+              <strong>Музей ЛЭТИ</strong>
+              <p>Приборы, макеты и история университета. Подходит тем, кто пришёл с родителями и хочет спокойный маршрут.</p>
+              <span class="place">12:00 · около 30 минут</span>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Как это было в прошлом году</h3>
+            <div class="year-grid">
+              <div class="shot s1"><span>Холл главного корпуса</span></div>
+              <div class="shot s2"><span>Экскурсия по лабораториям</span></div>
+              <div class="shot s3"><span>Встреча с приёмной комиссией</span></div>
+              <div class="shot s4"><span>Двор на Попова, 5</span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Как добраться</h3>
+            <p class="place" style="margin-bottom:10px">ул. Профессора Попова, д. 5 · метро Петроградская</p>
+            <iframe class="map-frame" title="Карта" src="https://www.openstreetmap.org/export/embed.html?bbox=30.312%2C59.969%2C30.327%2C59.976&amp;layer=mapnik&amp;marker=59.9725%2C30.3195"></iframe>
+          </div>
+        </div>
+        <aside>
+          <div class="ticket sticky">
+            <div class="ticket-top">
+              <div class="cal"><b>14</b><span>ДЕК</span></div>
+              <div>
+                <div class="ticket-kicker">Очно · 2026</div>
+                <h3>День открытых дверей</h3>
+              </div>
+            </div>
+            <ul class="ticket-meta">
+              <li>11:00–16:00, время московское</li>
+              <li>ул. Профессора Попова, 5</li>
+              <li>метро Петроградская</li>
+            </ul>
+            <div class="ticket-perk">
+              <span class="coin" aria-hidden="true"></span>
+              <div><strong>+12 баллов</strong><span>и сертификат после входа</span></div>
+            </div>
+            <div class="seat-bar">
+              <div class="seat-lab"><span>Места</span><b>осталось 86 из 800</b></div>
+              <div class="track"><i style="width:89%"></i></div>
+            </div>
+            <button class="btn btn-pri" onclick="go('p-signup')">Зарегистрироваться</button>
+            <p class="hint place" style="margin-top:10px;text-align:center">После записи придёт письмо</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЗАПИСЬ -->
+  <section class="screen" id="p-signup" data-role="applicant">
+    <div class="wrap" style="max-width:640px">
+      <div class="panel form">
+        <h3>Запись на День открытых дверей</h3>
+        <p class="place">Поля подтянуты из профиля. Правка сохранится в анкете и в снимке заявки.</p>
+        <label>ФИО</label><input value="Фамилия Имя Отчество" />
+        <label>Слот</label>
+        <select><option>11:00 экскурсия «Главный корпус» · 12 мест</option></select>
+        <label>Сопровождающие</label>
+        <div class="companion"><input placeholder="ФИО" /><button class="btn btn-line">+</button></div>
+        <label class="check"><input type="checkbox" checked /> Регистрируясь, подтверждаю, что приду</label>
+        <button class="btn btn-pri" onclick="go('p-cabinet','apps')">Записаться</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- КАБИНЕТ -->
+  <section class="screen" id="p-cabinet" data-role="applicant">
+    <div class="wrap">
+      <div class="cab-shell">
+        <aside class="cab-nav">
+          <button type="button" data-tab="profile" class="on">Профиль</button>
+          <button type="button" data-tab="form">Анкета</button>
+          <button type="button" data-tab="apps">Мои записи</button>
+          <button type="button" data-tab="points">Баллы и сертификаты</button>
+          <button type="button" data-tab="docs">Документы</button>
+        </aside>
+        <div class="cab-main">
+
+          <div class="cab-pane on" data-pane="profile">
+            <div class="profile-card">
+              <img src="assets/cat-happy.png" alt="" />
+              <div>
+                <h2>Фамилия Имя Отчество</h2>
+                <p class="place">ГБОУ лицей № 239 · Санкт-Петербург · поступление 2026</p>
+                <p class="b b-ok" style="display:inline-block;margin-top:8px">кабинет активен</p>
+              </div>
+            </div>
+            <div class="kpi">
+              <div class="panel"><b>2</b><span class="place">записи впереди</span></div>
+              <div class="panel"><b>1</b><span class="place">посещённое мероприятие</span></div>
+              <div class="panel"><b>17</b><span class="place">баллов начислено</span></div>
+              <div class="panel"><b>1</b><span class="place">сертификат</span></div>
+            </div>
+            <div class="panel">
+              <h3>Сейчас</h3>
+              <div class="list-row">
+                <div><strong>День открытых дверей ЛЭТИ</strong><div class="place">14 декабря 2026 · вы записаны · слот 11:00</div></div>
+                <span class="b b-ok">предстоит</span>
+              </div>
+              <div class="list-row">
+                <div><strong>Вечер факультетов</strong><div class="place">21 декабря 2026 · лист ожидания, позиция 4</div></div>
+                <span class="b b-wait">лист ожидания</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cab-pane" data-pane="form">
+            <div class="panel form form-grid">
+              <h3 class="span2">Анкета</h3>
+              <div class="field span2"><label>ФИО</label><input value="Фамилия Имя Отчество" /></div>
+              <div class="field"><label>Регион</label>
+                <select>
+                  <option selected>Санкт-Петербург</option>
+                  <option>Ленинградская область</option>
+                  <option>Москва</option>
+                  <option>Другой регион</option>
+                </select>
+              </div>
+              <div class="field"><label>Город</label>
+                <select>
+                  <option selected>Санкт-Петербург</option>
+                  <option>Гатчина</option>
+                  <option>Выборг</option>
+                  <option>Другой город</option>
+                </select>
+              </div>
+              <div class="field span2"><label>Образовательная организация</label>
+                <select>
+                  <option selected>ГБОУ лицей № 239</option>
+                  <option>ГБОУ школа № 45</option>
+                  <option>СПб ГБПОУ «Радиотехнический колледж»</option>
+                  <option>Другая организация</option>
+                </select>
+              </div>
+              <div class="field"><label>Год поступления в университет</label>
+                <select>
+                  <option selected>2026</option>
+                  <option>2027</option>
+                  <option>2028</option>
+                  <option>2029</option>
+                  <option>2030</option>
+                </select>
+              </div>
+              <div class="field"><label>Почта</label><input type="email" value="maria.ivanova@mail.ru" /></div>
+              <div class="field"><label>Телефон</label><input type="tel" value="+7 921 000-00-00" /></div>
+              <div class="field"><label>Дата рождения</label><input type="date" value="2009-05-14" /></div>
+              <div class="field"><label>Пол</label>
+                <select>
+                  <option selected>Женский</option>
+                  <option>Мужской</option>
+                </select>
+              </div>
+              <div class="field span2"><label>Адрес регистрации <span class="opt">необязательно</span></label><input value="Санкт-Петербург, ул. Садовая, 1" /></div>
+              <div class="field span2">
+                <label>Документ, удостоверяющий личность <span class="opt">необязательно</span></label>
+                <div class="file-now">загружен: паспорт.pdf · <button type="button" class="linkish">заменить</button></div>
+                <input type="file" />
+              </div>
+              <button class="btn btn-pri span2" style="width:100%;margin-top:8px">Сохранить анкету</button>
+              <hr class="span2" style="border:0;border-top:1px solid var(--line);margin:20px 0 8px" />
+              <p class="place span2">Удаление кабинета: история у комиссии останется, новые записи и рассылки — нет, пока не зарегистрируетесь снова.</p>
+              <button class="btn btn-danger">Удалить кабинет</button>
+            </div>
+          </div>
+
+          <div class="cab-pane" data-pane="apps">
+            <div class="panel">
+              <h3>Предстоящие</h3>
+              <div class="list-row">
+                <div><strong>День открытых дверей ЛЭТИ</strong><div class="place">14 декабря 2026 · 11:00 · ул. Профессора Попова, 5</div></div>
+                <div class="row-actions">
+                  <button class="btn btn-line">Изменить</button>
+                  <button class="btn btn-danger">Отменить</button>
+                </div>
+              </div>
+              <div class="list-row">
+                <div><strong>Вечер факультетов</strong><div class="place">21 декабря 2026 · онлайн · позиция в листе 4</div></div>
+                <div class="row-actions">
+                  <button class="btn btn-danger">Отменить</button>
+                </div>
+              </div>
+            </div>
+            <div class="panel">
+              <h3>Прошедшие</h3>
+              <div class="list-row">
+                <div><strong>ДОД весна 2026</strong><div class="place">20 апреля 2026</div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="cab-pane" data-pane="points">
+            <div class="kpi kpi-2">
+              <div class="panel"><b>17</b><span class="place">баллов начислено</span></div>
+              <div class="panel"><b>1</b><span class="place">сертификат выдан</span></div>
+            </div>
+            <div class="panel">
+              <h3>История начислений</h3>
+              <table>
+                <thead><tr><th>Дата</th><th>Мероприятие</th><th>Начислено</th></tr></thead>
+                <tbody>
+                  <tr><td>12.09.2026</td><td>Вечер факультетов</td><td>+5 баллов</td></tr>
+                  <tr><td>20.04.2026</td><td>ДОД весна</td><td>+12 баллов, сертификат</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="panel">
+              <h3>Сертификаты</h3>
+              <div class="list-row">
+                <div>Сертификат участника · ДОД весна 2026</div>
+                <button class="btn btn-pri">Скачать</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="cab-pane" data-pane="docs">
+            <div class="panel">
+              <h3>Документы и согласия</h3>
+              <div class="list-row">
+                <div><strong>Согласие на обработку персональных данных</strong><div class="place">дано при регистрации · 12.03.2026 · если нет 18 лет — от родителя</div></div>
+                <button class="btn btn-line">Скачать</button>
+              </div>
+              <div class="list-row">
+                <div><strong>Согласие на получение рассылок</strong><div class="place">дано при регистрации · 12.03.2026</div></div>
+              </div>
+              <div class="list-row">
+                <div><strong>Документ, удостоверяющий личность</strong><div class="place">паспорт.pdf · загружен 12.03.2026</div></div>
+                <button class="btn btn-line">Скачать</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ВХОД -->
+  <section class="screen" id="p-login">
+    <div class="wrap">
+      <div class="auth">
+        <img class="cat" src="assets/cat-wave.jpg" alt="" />
+        <h2>Вход</h2>
+        <p class="lead">Почта и пароль, которые вы указали при регистрации.</p>
+        <div class="form">
+          <label>Почта</label><input type="email" />
+          <label>Пароль</label><input type="password" />
+          <button class="btn btn-pri" style="width:100%;margin-top:14px" onclick="go('p-catalog')">Войти</button>
+          <button class="btn btn-line" style="width:100%;margin-top:10px" onclick="go('p-reg')">Зарегистрироваться</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="p-reg">
+    <div class="wrap">
+      <div class="auth wide">
+        <img class="cat" src="assets/cat-happy.png" alt="" />
+        <h2>Регистрация</h2>
+        <p class="lead">Дни открытых дверей, мастер-классы и встречи с факультетами.</p>
+        <div class="form form-grid">
+          <div class="field span2"><label>Фамилия</label><input /></div>
+          <div class="field span2"><label>Имя</label><input /></div>
+          <div class="field span2"><label>Отчество</label><input /></div>
+          <div class="field span2"><label>Телефон</label><input type="tel" placeholder="+7" /></div>
+          <div class="field span2"><label>Email</label><input type="email" /></div>
+          <div class="field"><label>Дата рождения</label><input type="date" /></div>
+          <div class="field"><label>Пол</label>
+            <select>
+              <option>Женский</option>
+              <option>Мужской</option>
+            </select>
+          </div>
+          <div class="field"><label>Регион</label>
+            <select>
+              <option>Санкт-Петербург</option>
+              <option>Ленинградская область</option>
+              <option>Москва</option>
+              <option>Другой регион</option>
+            </select>
+          </div>
+          <div class="field"><label>Город</label>
+            <select>
+              <option>Санкт-Петербург</option>
+              <option>Гатчина</option>
+              <option>Выборг</option>
+              <option>Другой город</option>
+            </select>
+          </div>
+          <div class="field span2"><label>Образовательная организация</label>
+            <select>
+              <option>ГБОУ лицей № 239</option>
+              <option>ГБОУ школа № 45</option>
+              <option>СПб ГБПОУ «Радиотехнический колледж»</option>
+              <option>Другая организация</option>
+            </select>
+          </div>
+          <div class="field span2"><label>Год поступления в университет</label>
+            <select>
+              <option>2026</option>
+              <option>2027</option>
+              <option>2028</option>
+              <option>2029</option>
+              <option>2030</option>
+            </select>
+          </div>
+          <label class="check span2"><input type="checkbox" /> Согласие на обработку персональных данных и получение рассылок</label>
+          <button class="btn btn-pri span2" style="width:100%;margin-top:8px" onclick="go('p-catalog')">Зарегистрироваться</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- АДМИН -->
+  <section class="screen admin" id="p-a-login">
+    <div class="wrap">
+      <div class="auth">
+        <img class="cat" src="assets/cat-desk.jpg" alt="" />
+        <h2>Вход</h2>
+        <div class="form">
+          <label>Логин</label><input />
+          <label>Пароль</label><input type="password" />
+          <button class="btn btn-pri" style="width:100%;margin-top:12px" onclick="go('p-a-home')">Войти</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-home" data-role="admin" data-nav="home">
+    <div class="wrap">
+      <div class="dash-hero">
+        <div>
+          <div class="dash-kicker">Приёмная комиссия</div>
+          <h2>Мероприятия центра</h2>
+          <p>Запись, явка, баллы и сертификаты по всем открытым событиям — в одном месте.</p>
+        </div>
+        <img src="assets/cat-desk.jpg" alt="" />
+      </div>
+      <div class="dash-kpis">
+        <button type="button" class="m-card ok" onclick="go('p-a-list')">
+          <span class="place">Новые записи сегодня</span>
+          <b>41</b>
+          <span class="trend-up">↑ на 13 больше, чем вчера</span>
+        </button>
+        <button type="button" class="m-card warn" onclick="go('p-a-attend')">
+          <span class="place">Ждут отметки входа</span>
+          <b>214</b>
+          <span class="trend-warn">ближайшее событие без явки</span>
+        </button>
+        <button type="button" class="m-card bad" onclick="go('p-a-award')">
+          <span class="place">Явка есть, баллов нет</span>
+          <b>86</b>
+          <span class="trend-down">не выданы после 12 сентября</span>
+        </button>
+        <button type="button" class="m-card ok" onclick="go('p-a-apps')">
+          <span class="place">Новые кабинеты за 7 дней</span>
+          <b>64</b>
+          <span class="trend-up">↑ +22% к прошлой неделе</span>
+        </button>
+      </div>
+      <div class="cols">
+        <div class="panel">
+          <h3>Наполнение ближайших</h3>
+          <div class="hbar"><span class="hbar-lab">ДОД ЛЭТИ</span><div class="track"><i class="warn" style="width:89%"></i></div><b>714 / 800</b></div>
+          <p class="hbar-note warn">Осталось 86 мест · +18 за сутки</p>
+          <div class="hbar"><span class="hbar-lab">Вечер факультетов</span><div class="track"><i class="bad" style="width:100%"></i></div><b>400 / 400</b></div>
+          <p class="hbar-note bad">Мест нет · лист вырос на 6 за сутки</p>
+          <div class="hbar"><span class="hbar-lab">Мастер-классы</span><div class="track"><i class="ok" style="width:28%"></i></div><b>186</b></div>
+          <p class="hbar-note ok">Без лимита · набор спокойный</p>
+        </div>
+        <div class="panel">
+          <h3>Что сделать сегодня</h3>
+          <div class="todo-row" onclick="go('p-a-award')"><span class="dot bad"></span><div><strong>Выдать баллы за вечер факультетов</strong><div class="place">86 человек с подтверждённым входом</div></div></div>
+          <div class="todo-row" onclick="go('p-a-list')"><span class="dot warn"></span><div><strong>Следить за листом вечера факультетов</strong><div class="place">если отменят запись — очередь подтянется сама</div></div></div>
+          <div class="todo-row" onclick="go('p-a-event')"><span class="dot ok"></span><div><strong>ДОД набирает нормально</strong><div class="place">89% мест, до события ещё есть запас</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-list" data-role="admin" data-nav="events">
+    <div class="wrap">
+      <div class="hrow">
+        <h3>Мероприятия</h3>
+        <button class="btn btn-pri" onclick="go('p-a-form')">Создать</button>
+      </div>
+      <div class="panel">
+        <table class="row-link">
+          <thead>
+            <tr>
+              <th>Дата</th><th>Название</th><th>Статус</th><th>Записано</th>
+              <th>Динамика за 24 часа</th><th>Динамика 7 дней</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr onclick="go('p-a-event')">
+              <td>14.12.2026</td>
+              <td>День открытых дверей ЛЭТИ</td>
+              <td>опубликовано</td>
+              <td>714 / 800</td>
+              <td class="delta">+18</td>
+              <td><div class="spark" aria-hidden="true"><i style="height:30%"></i><i style="height:45%"></i><i style="height:40%"></i><i style="height:62%"></i><i style="height:58%"></i><i style="height:90%"></i><i style="height:70%"></i></div></td>
+            </tr>
+            <tr onclick="go('p-a-event')">
+              <td>21.12.2026</td>
+              <td>Вечер факультетов</td>
+              <td>опубликовано</td>
+              <td>400 / 400</td>
+              <td class="delta">+3</td>
+              <td><div class="spark" aria-hidden="true"><i style="height:80%"></i><i style="height:72%"></i><i style="height:55%"></i><i style="height:40%"></i><i style="height:22%"></i><i style="height:18%"></i><i style="height:10%"></i></div></td>
+            </tr>
+            <tr onclick="go('p-a-event')">
+              <td>18.01.2027</td>
+              <td>Мастер-классы для 10–11 классов</td>
+              <td>опубликовано</td>
+              <td>186</td>
+              <td class="delta">+12</td>
+              <td><div class="spark" aria-hidden="true"><i style="height:12%"></i><i style="height:18%"></i><i style="height:22%"></i><i style="height:28%"></i><i style="height:35%"></i><i style="height:40%"></i><i style="height:48%"></i></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-event" data-role="admin" data-nav="events">
+    <div class="wrap">
+      <p class="place"><a class="linkish" onclick="go('p-a-list')">← к мероприятиям</a></p>
+      <h3 style="margin:4px 0 16px">День открытых дверей ЛЭТИ · 14 декабря</h3>
+      <div class="kpi">
+        <div class="panel"><b>714</b><span class="place">записано</span></div>
+        <div class="panel"><b>86</b><span class="place">мест осталось</span></div>
+        <div class="panel"><b>12</b><span class="place">в листе ожидания</span></div>
+        <div class="panel"><b>+48</b><span class="place">записей за 7 дней</span></div>
+      </div>
+      <div class="cols">
+        <div class="panel">
+          <h3>Динамика записей</h3>
+          <div class="chart">
+            <span style="height:28%"></span><span style="height:40%"></span><span style="height:36%"></span>
+            <span style="height:58%"></span><span style="height:52%"></span><span style="height:92%"></span>
+            <span style="height:64%"></span>
+          </div>
+          <div class="chart-lab"><span>8.12</span><span>9.12</span><span>10.12</span><span>11.12</span><span>12.12</span><span>13.12</span><span>14.12</span></div>
+        </div>
+        <div class="panel">
+          <h3>Срез аудитории</h3>
+          <div class="list-row"><div>11 класс</div><span>62%</span></div>
+          <div class="list-row"><div>10 класс</div><span>28%</span></div>
+          <div class="list-row"><div>9 класс и младше</div><span>6%</span></div>
+          <div class="list-row"><div>колледж / студенты вуза</div><span>4%</span></div>
+        </div>
+      </div>
+      <div class="toolbar" style="margin:8px 0 16px">
+        <button class="btn btn-pri" onclick="go('p-a-people')">Участники</button>
+        <button class="btn btn-line" onclick="go('p-a-attend')">Подтверждение явки</button>
+        <button class="btn btn-line" onclick="go('p-a-award')">Выдать баллы</button>
+        <button class="btn btn-line">Скачать списки XLSX</button>
+      </div>
+      <div class="panel form">
+        <h3>Карточка мероприятия</h3>
+        <p class="place">Редактирование открытого мероприятия. Отмена закрывает запись.</p>
+        <label>Название</label><input value="День открытых дверей ЛЭТИ" />
+        <label>Формат</label><select><option selected>Очно</option><option>Онлайн</option><option>Смешанный</option></select>
+        <label>Дата и время</label><input value="14 декабря 2026, 11:00–16:00" />
+        <label>Лимит мест</label><input value="800" />
+        <label>Объявленные баллы</label><input value="12" />
+        <label>Сертификат</label><select><option selected>Да, после подтверждения входа</option><option>Нет</option></select>
+        <div class="row" style="margin-top:14px;gap:10px">
+          <button class="btn btn-pri">Сохранить</button>
+          <button class="btn btn-danger">Отменить мероприятие</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-form" data-role="admin" data-nav="events">
+    <div class="wrap">
+      <p class="place"><a class="linkish" onclick="go('p-a-list')">← к мероприятиям</a></p>
+      <div class="panel form" id="event-create">
+        <h3>Новое мероприятие</h3>
+        <p class="place">Сохранение публикует мероприятие и открывает запись.</p>
+        <label>Название</label>
+        <input placeholder="День открытых дверей ЛЭТИ" />
+        <label>Описание</label>
+        <textarea rows="4" placeholder="Что будет, для кого, как пройти"></textarea>
+        <label>Баннер</label>
+        <label class="banner-drop">
+          <input type="file" accept="image/*" />
+          <span>Загрузить изображение</span>
+        </label>
+        <div class="form-grid">
+          <div class="field"><label>Начало</label><input type="datetime-local" /></div>
+          <div class="field"><label>Окончание</label><input type="datetime-local" /></div>
+        </div>
+        <label>Формат</label>
+        <select class="js-format">
+          <option value="offline">Очно</option>
+          <option value="online">Онлайн</option>
+          <option value="mixed">Смешанный</option>
+        </select>
+        <div class="js-online-link" hidden>
+          <label>Ссылка на трансляцию / комнату</label>
+          <input placeholder="https://" />
+        </div>
+        <label>Лимит мест</label>
+        <input placeholder="800 или пусто — без потолка" />
+        <label>Сопровождающие</label>
+        <select>
+          <option>Нельзя</option>
+          <option>Можно</option>
+        </select>
+        <label>Баллы</label>
+        <select class="js-points-on">
+          <option value="no">Не дают</option>
+          <option value="yes">Дают</option>
+        </select>
+        <div class="js-points-more cond-box" hidden>
+          <label>Сколько баллов</label>
+          <input type="number" placeholder="12" />
+          <label>При каком условии</label>
+          <select>
+            <option>После подтверждения входа</option>
+            <option>После входа во все дни проведения</option>
+            <option>Другое — указать</option>
+          </select>
+        </div>
+        <label>Сертификат</label>
+        <select class="js-cert-on">
+          <option value="no">Не дают</option>
+          <option value="yes">Дают</option>
+        </select>
+        <div class="js-cert-more cond-box" hidden>
+          <label>При каком условии</label>
+          <select>
+            <option>После подтверждения входа</option>
+            <option>После входа во все дни проведения</option>
+            <option>Другое — указать</option>
+          </select>
+        </div>
+        <div class="q-block">
+          <h3>Активности</h3>
+          <p class="place">Мастер-классы, экскурсии и другие точки программы. Появятся в карточке и в форме записи.</p>
+          <div id="event-acts"></div>
+          <button type="button" class="btn btn-line" id="add-act">Добавить активность</button>
+        </div>
+        <div class="q-block">
+          <h3>Дополнительные вопросы</h3>
+          <p class="place">Появятся в форме записи. Можно выбрать из вариантов или свой ответ.</p>
+          <div id="extra-qs"></div>
+          <button type="button" class="btn btn-line" id="add-q">Добавить вопрос</button>
+        </div>
+        <button class="btn btn-pri" style="margin-top:16px">Создать и открыть регистрацию</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-people" data-role="admin" data-nav="events">
+    <div class="wrap">
+      <p class="place"><a class="linkish" onclick="go('p-a-event')">← к карточке мероприятия</a></p>
+      <div class="hrow">
+        <h3>Участники · ДОД ЛЭТИ</h3>
+        <div class="toolbar" style="margin:0">
+          <button class="btn btn-line">Скачать XLSX</button>
+          <button class="btn btn-pri" onclick="go('p-a-attend')">Подтверждение явки</button>
+        </div>
+      </div>
+      <div class="toolbar">
+        <button class="pill on">Записаны · 714</button>
+        <button class="pill">Лист ожидания · 12</button>
+        <button class="pill">Отменённые</button>
+      </div>
+      <div class="panel">
+        <table>
+          <thead><tr><th>ФИО</th><th>Тип</th><th>Класс</th><th>Слот</th><th>Сопров.</th></tr></thead>
+          <tbody>
+            <tr class="clickable" onclick="go('p-a-person')"><td>Фамилия Имя Отчество</td><td>школьник</td><td>11</td><td>11:00</td><td>1</td></tr>
+            <tr><td>Фамилия Имя Отчество</td><td>школьник</td><td>10</td><td>13:00</td><td>0</td></tr>
+            <tr><td>Фамилия Имя Отчество</td><td>колледж</td><td>—</td><td>11:00</td><td>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-attend" data-role="admin" data-nav="attend">
+    <div class="wrap">
+      <h3>Посещаемость</h3>
+      <label class="event-pick full">Мероприятие
+        <select>
+          <option selected>ДОД ЛЭТИ · 14 декабря</option>
+          <option>Вечер факультетов · 21 декабря</option>
+          <option>Мастер-классы · 18 января</option>
+        </select>
+      </label>
+      <div class="toolbar split">
+        <input class="search-wide" placeholder="Поиск по ФИО" />
+        <div class="toolbar-right">
+          <button class="btn btn-line" type="button" id="mark-all">Отметить всех</button>
+          <button class="btn btn-line" onclick="go('p-a-award')">К выдаче баллов</button>
+        </div>
+      </div>
+      <div class="panel">
+        <label class="check-row"><span>Фамилия Имя Отчество</span><input type="checkbox" class="js-attend" /></label>
+        <label class="check-row"><span>Фамилия Имя Отчество</span><input type="checkbox" class="js-attend" checked /></label>
+        <label class="check-row"><span>Фамилия Имя Отчество</span><input type="checkbox" class="js-attend" /></label>
+        <label class="check-row"><span>Фамилия Имя Отчество</span><input type="checkbox" class="js-attend" /></label>
+      </div>
+      <button class="btn btn-pri">Сохранить</button>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-award" data-role="admin" data-nav="award">
+    <div class="wrap">
+      <h3>Баллы и сертификаты</h3>
+      <label class="event-pick full">Мероприятие
+        <select>
+          <option selected>ДОД ЛЭТИ · 14 декабря · 12 баллов, сертификат</option>
+          <option>Вечер факультетов · 21 декабря · 5 баллов</option>
+          <option>Мастер-классы · 18 января · сертификат</option>
+        </select>
+      </label>
+      <div class="toolbar">
+        <input class="search-wide" placeholder="Поиск по ФИО" />
+      </div>
+      <p class="place">По умолчанию стоят баллы из карточки. Можно поправить перед выдачей. В списке — те, у кого подтверждён вход.</p>
+      <div class="panel">
+        <table>
+          <thead><tr><th></th><th>ФИО</th><th>Баллы</th><th>Сертификат</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox" checked /></td>
+              <td>Фамилия Имя Отчество</td>
+              <td><input class="mini" type="number" value="12" /></td>
+              <td><input type="checkbox" checked /></td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" checked /></td>
+              <td>Фамилия Имя Отчество</td>
+              <td><input class="mini" type="number" value="12" /></td>
+              <td><input type="checkbox" checked /></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn-pri">Сохранить</button>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-apps" data-role="admin" data-nav="apps">
+    <div class="wrap">
+      <h3 style="margin:0 0 12px">Абитуриенты</h3>
+      <div class="toolbar split">
+        <input class="search-wide" placeholder="Поиск по ФИО" />
+        <button type="button" class="btn btn-line filter-btn" id="toggle-apps-filters">Фильтры</button>
+      </div>
+      <div class="filter-sheet" id="apps-filters" hidden>
+        <div class="field"><label>Уровень обучения</label>
+          <select id="apps-level">
+            <option value="">Все</option>
+            <option value="school">Школьник</option>
+            <option value="college">Студент колледжа</option>
+            <option value="uni">Студенты вуза</option>
+          </select>
+        </div>
+        <div class="field" id="apps-class-wrap" hidden>
+          <label>Класс</label>
+          <select>
+            <option>Все классы</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+          </select>
+        </div>
+        <div class="field"><label>Регион</label>
+          <select>
+            <option>Все регионы</option>
+            <option>Санкт-Петербург</option>
+            <option>Ленинградская область</option>
+          </select>
+        </div>
+        <div class="field"><label>Город</label>
+          <select>
+            <option>Все города</option>
+            <option>Санкт-Петербург</option>
+            <option>Гатчина</option>
+            <option>Выборг</option>
+          </select>
+        </div>
+        <div class="field"><label>Образовательная организация</label>
+          <select>
+            <option>Все</option>
+            <option>ГБОУ лицей № 239</option>
+            <option>ГБОУ школа № 45</option>
+            <option>Радиотехнический колледж</option>
+          </select>
+        </div>
+      </div>
+      <div class="panel">
+        <table class="row-link">
+          <thead><tr><th>ФИО</th><th>Тип</th><th>Регион</th><th>Город</th><th>Школа / организация</th></tr></thead>
+          <tbody>
+            <tr onclick="go('p-a-person')">
+              <td>Фамилия Имя Отчество</td><td>школьник, 11</td>
+              <td>Санкт-Петербург</td><td>Санкт-Петербург</td><td>ГБОУ лицей № 239</td>
+            </tr>
+            <tr onclick="go('p-a-person')">
+              <td>Фамилия Имя Отчество</td><td>школьник, 10</td>
+              <td>Санкт-Петербург</td><td>Санкт-Петербург</td><td>ГБОУ школа № 45</td>
+            </tr>
+            <tr onclick="go('p-a-person')">
+              <td>Фамилия Имя Отчество</td><td>студент колледжа</td>
+              <td>Ленинградская область</td><td>Гатчина</td><td>Радиотехнический колледж</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-person" data-role="admin" data-nav="apps">
+    <div class="wrap">
+      <p class="place"><a class="linkish" onclick="go('p-a-apps')">← к списку абитуриентов</a></p>
+      <div class="profile-card">
+        <img src="assets/cat-happy.png" alt="" />
+        <div>
+          <h2>Фамилия Имя Отчество</h2>
+          <p class="place">школьник · 11 класс · Санкт-Петербург · поступление 2026</p>
+          <p class="place">maria.ivanova@mail.ru · +7 921 000-00-00</p>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Записи и посещения</h3>
+        <div class="list-row"><div><strong>ДОД ЛЭТИ · 14 декабря 2026</strong><div class="place">записан · слот 11:00</div></div><span class="b b-blue">зарегистрирован</span></div>
+        <div class="list-row"><div><strong>Вечер факультетов · 21 декабря 2026</strong><div class="place">лист ожидания, позиция 4</div></div><span class="b b-wait">лист ожидания</span></div>
+        <div class="list-row"><div><strong>ДОД весна · 20 апреля 2026</strong></div><span class="b b-ok">посещено</span></div>
+      </div>
+      <div class="panel">
+        <h3>Баллы и сертификаты</h3>
+        <div class="list-row"><div>Вечер факультетов · 12.09.2026</div><span>+5 баллов</span></div>
+        <div class="list-row"><div>ДОД весна · 20.04.2026</div><span>+12 баллов, сертификат</span></div>
+      </div>
+      <div class="panel form form-grid">
+        <h3 class="span2">Анкета</h3>
+        <div class="field span2"><label>ФИО</label><input value="Фамилия Имя Отчество" /></div>
+        <div class="field"><label>Регион</label><select><option selected>Санкт-Петербург</option></select></div>
+        <div class="field"><label>Город</label><select><option selected>Санкт-Петербург</option></select></div>
+        <div class="field span2"><label>Образовательная организация</label><select><option selected>ГБОУ лицей № 239</option></select></div>
+        <div class="field"><label>Год поступления</label><select><option selected>2026</option></select></div>
+        <div class="field"><label>Почта</label><input value="maria.ivanova@mail.ru" /></div>
+        <div class="field"><label>Телефон</label><input value="+7 921 000-00-00" /></div>
+        <div class="field"><label>Дата рождения</label><input type="date" value="2009-05-14" /></div>
+        <div class="field"><label>Пол</label><select><option selected>Женский</option></select></div>
+        <div class="field span2"><label>Адрес регистрации</label><input value="Санкт-Петербург, ул. Садовая, 1" /></div>
+        <button class="btn btn-pri span2" style="margin-top:8px">Сохранить анкету</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-stats" data-role="admin" data-nav="stats">
+    <div class="wrap">
+      <h3>Статистика</h3>
+      <p class="place" style="margin:-6px 0 14px">Свод по кабинетам, записям, явке и баллам за выбранный период.</p>
+
+      <form class="stats-filters" onsubmit="return false">
+        <div class="field">
+          <label for="stat-preset">Период</label>
+          <select id="stat-preset" onchange="statsPreset()">
+            <option value="year" selected>Учебный год 2026/27</option>
+            <option value="fall">Осень 2026</option>
+            <option value="month">Декабрь 2026</option>
+            <option value="custom">Свои даты</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="stat-from">С даты</label>
+          <input id="stat-from" type="date" value="2026-09-01" onchange="statsDatesManual()" />
+        </div>
+        <div class="field">
+          <label for="stat-to">По дату</label>
+          <input id="stat-to" type="date" value="2027-02-28" onchange="statsDatesManual()" />
+        </div>
+        <div class="field">
+          <label for="stat-aud">Аудитория</label>
+          <select id="stat-aud">
+            <option selected>Все</option>
+            <option>11 класс</option>
+            <option>10 класс</option>
+            <option>9 класс и младше</option>
+            <option>Колледж</option>
+            <option>Студенты вуза</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="stat-dir">Тип активности</label>
+          <select id="stat-dir">
+            <option selected>Все</option>
+            <option>Олимпиады</option>
+            <option>Конференции</option>
+            <option>Практики</option>
+            <option>День открытых дверей</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="stat-ev">Мероприятие</label>
+          <select id="stat-ev">
+            <option selected>Все</option>
+            <option>ДОД ЛЭТИ</option>
+            <option>Вечер факультетов</option>
+            <option>Мастер-классы для 10–11 классов</option>
+          </select>
+        </div>
+        <div class="stats-filter-actions">
+          <button type="button" class="btn btn-pri">Показать</button>
+          <span class="place">01.09.2026 — 28.02.2027</span>
+        </div>
+      </form>
+
+      <div class="dash-kpis stats-kpis">
+        <div class="m-card"><span class="place">Записей</span><b>3 840</b><span class="trend-up">+18% к прошлому периоду</span></div>
+        <div class="m-card ok"><span class="place">Уникальных кабинетов</span><b>2 910</b><span class="trend-up">+210 новых</span></div>
+        <div class="m-card warn"><span class="place">Средняя явка</span><b>78%</b><span class="trend-warn">цель 85%</span></div>
+        <div class="m-card"><span class="place">Баллов выдано</span><b>12 400</b><span class="place">по 9 мероприятиям</span></div>
+        <div class="m-card bad"><span class="place">Лист ожидания</span><b>86</b><span class="trend-down">2 мероприятия без мест</span></div>
+        <div class="m-card ok"><span class="place">Сертификатов</span><b>1 104</b><span class="place">при явке и условии</span></div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="panel">
+          <h3>Записи по дням</h3>
+          <p class="place">Линейный график · пик 13 декабря, перед ДОД</p>
+          <svg class="line-chart" viewBox="0 0 360 140" role="img" aria-label="Записи по дням">
+            <g class="grid" stroke="#e3e6eb" stroke-width="1">
+              <line x1="28" y1="20" x2="350" y2="20" /><line x1="28" y1="52" x2="350" y2="52" />
+              <line x1="28" y1="84" x2="350" y2="84" /><line x1="28" y1="116" x2="350" y2="116" />
+            </g>
+            <polyline fill="none" stroke="#023370" stroke-width="2.5" stroke-linejoin="round"
+              points="28,108 70,100 112,96 154,88 196,72 238,40 280,28 322,48 350,62" />
+            <polygon fill="rgba(2,51,112,.12)"
+              points="28,116 28,108 70,100 112,96 154,88 196,72 238,40 280,28 322,48 350,62 350,116" />
+            <g fill="#023370">
+              <circle cx="280" cy="28" r="4" /><circle cx="238" cy="40" r="3.5" />
+            </g>
+          </svg>
+          <div class="chart-lab"><span>1.12</span><span>7.12</span><span>13.12</span><span>19.12</span></div>
+        </div>
+
+        <div class="panel">
+          <h3>Записи по месяцам</h3>
+          <p class="place">Столбцы · сентябрь — февраль</p>
+          <div class="chart chart-color">
+            <span class="c1" style="height:30%"></span><span class="c2" style="height:44%"></span>
+            <span class="c3" style="height:38%"></span><span class="c4" style="height:60%"></span>
+            <span class="c5" style="height:72%"></span><span class="c6" style="height:90%"></span>
+          </div>
+          <div class="chart-lab"><span>сен</span><span>окт</span><span>ноя</span><span>дек</span><span>янв</span><span>фев</span></div>
+        </div>
+
+        <div class="panel">
+          <h3>Состав аудитории</h3>
+          <p class="place">Кольцевая диаграмма по типу кабинета</p>
+          <div class="donut-wrap">
+            <div class="donut" style="background: conic-gradient(#023370 0 62%, #3a7bd5 62% 90%, #e0a84a 90% 96%, #1f7a4d 96% 100%)"></div>
+            <ul class="legend">
+              <li><i class="lg-navy"></i>11 класс · 62%</li>
+              <li><i class="lg-blue"></i>10 класс · 28%</li>
+              <li><i class="lg-gold"></i>9 и младше · 6%</li>
+              <li><i class="lg-ok"></i>колледж / студенты вуза · 4%</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Формат мероприятий</h3>
+          <p class="place">Круговая · по числу записей</p>
+          <div class="donut-wrap">
+            <div class="pie" style="background: conic-gradient(#023370 0 71%, #0b8f8c 71% 88%, #d97706 88% 100%)"></div>
+            <ul class="legend">
+              <li><i class="lg-navy"></i>очно · 71%</li>
+              <li><i class="lg-teal"></i>онлайн · 17%</li>
+              <li><i class="lg-warn"></i>смешанный · 12%</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="panel span2">
+          <h3>Записано и пришло</h3>
+          <p class="place">Накопительные столбцы по крупным мероприятиям</p>
+          <div class="stack-chart">
+            <div class="stack-col"><div class="stack-bars"><i class="came" style="height:61%"></i><i class="miss" style="height:10%"></i></div><span>ДОД ЛЭТИ</span></div>
+            <div class="stack-col"><div class="stack-bars"><i class="came" style="height:38%"></i><i class="miss" style="height:8%"></i></div><span>Вечер фак.</span></div>
+            <div class="stack-col"><div class="stack-bars"><i class="came" style="height:52%"></i><i class="miss" style="height:12%"></i></div><span>ДОД весна</span></div>
+            <div class="stack-col"><div class="stack-bars"><i class="came" style="height:22%"></i><i class="miss" style="height:6%"></i></div><span>Мастер-кл.</span></div>
+            <div class="stack-col"><div class="stack-bars"><i class="came" style="height:18%"></i><i class="miss" style="height:4%"></i></div><span>Экскурсии</span></div>
+          </div>
+          <ul class="legend inline">
+            <li><i class="lg-ok"></i>пришли</li>
+            <li><i class="lg-miss"></i>не пришли из записанных</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <h3>Воронка</h3>
+          <p class="place">От кабинета до балла за период</p>
+          <div class="funnel">
+            <div class="fn fn1">Кабинеты <b>2 910</b></div>
+            <div class="fn fn2">Хотя бы одна запись <b>2 440</b></div>
+            <div class="fn fn3">Явка хотя бы раз <b>1 910</b></div>
+            <div class="fn fn4">Получили баллы <b>1 640</b></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Регионы</h3>
+          <p class="place">Горизонтальные полосы · топ-5</p>
+          <div class="hbar"><span class="hbar-lab">Санкт-Петербург · 1 842</span><div class="track"><i style="width:78%"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">Ленобласть · 610</span><div class="track"><i class="ok" style="width:42%"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">Новгородская · 198</span><div class="track"><i class="warn" style="width:22%"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">Псковская · 142</span><div class="track"><i style="width:16%;background:#3a7bd5"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">Другие · 118</span><div class="track"><i class="bad" style="width:12%"></i></div></div>
+        </div>
+
+        <div class="panel span2">
+          <h3>По мероприятиям</h3>
+          <p class="place">Записи, заполнение мест, явка</p>
+          <div class="hbar"><span class="hbar-lab">ДОД ЛЭТИ · 714 / 800 · явка 86%</span><div class="track"><i style="width:89%"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">Вечер факультетов · 400 / 400 · лист 36</span><div class="track"><i class="bad" style="width:100%"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">ДОД весна · 640 / 800 · явка 81%</span><div class="track"><i class="ok" style="width:80%"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">Мастер-классы · 186 · набор идёт</span><div class="track"><i class="warn" style="width:46%"></i></div></div>
+        </div>
+      </div>
+
+      <div class="stats-export">
+        <div>
+          <strong>Выгрузка</strong>
+          <p class="place">Файл по фильтрам и датам выше: записи, явка, баллы, срезы аудитории.</p>
+        </div>
+        <button type="button" class="btn btn-line">Выгрузить XLSX</button>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js?v=acts1"></script>
+</body>
+</html>
