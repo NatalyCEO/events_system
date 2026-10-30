@@ -232,24 +232,22 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     const kind = create.querySelector(".js-kind");
     const confMore = create.querySelector(".js-conf-more");
-    if (kind && confMore) {
-      kind.onchange = () => {
-        confMore.hidden = kind.value !== "conference";
-      };
-    }
     const aud = create.querySelector(".js-aud");
     const grades = create.querySelector(".js-grades");
     const pointsBlock = create.querySelector(".js-points-block");
     const coinsWrap = create.querySelector(".js-coins-wrap");
-    function syncAud() {
+    function syncCreate() {
+      const isConf = kind?.value === "conference";
       const v = aud?.value || "school";
-      const students = v === "student" || v === "both";
+      const coins = isConf || v === "student" || v === "both";
+      if (confMore) confMore.hidden = !isConf;
       if (grades) grades.hidden = v === "student";
-      if (pointsBlock) pointsBlock.hidden = students;
-      if (coinsWrap) coinsWrap.hidden = !students;
+      if (pointsBlock) pointsBlock.hidden = coins;
+      if (coinsWrap) coinsWrap.hidden = !coins;
     }
-    if (aud) aud.onchange = syncAud;
-    syncAud();
+    if (kind) kind.onchange = syncCreate;
+    if (aud) aud.onchange = syncCreate;
+    syncCreate();
     const coinsOn = create.querySelector(".js-coins-on");
     const coinsMore = create.querySelector(".js-coins-more");
     if (coinsOn && coinsMore) {
