@@ -1,18 +1,28 @@
 const screens = [
   ["p-login", "Вход"],
   ["p-reg", "Регистрация"],
-  ["p-catalog", "Каталог"],
+  ["p-catalog", "Главная"],
+  ["p-events", "Все мероприятия"],
   ["p-event", "Мероприятие"],
   ["p-signup", "Запись"],
+  ["p-conf", "Конференция"],
+  ["p-conf-form", "Заявка на конференцию"],
+  ["p-conf-files", "Загрузка материалов"],
   ["p-cabinet", "Кабинет"],
+  ["p-contacts", "Контакты"],
   ["p-a-login", "Админ · вход"],
   ["p-a-home", "Админ · обзор"],
   ["p-a-list", "Админ · мероприятия"],
   ["p-a-event", "Админ · карточка"],
+  ["p-a-conf", "Админ · конференция"],
   ["p-a-form", "Админ · создать"],
   ["p-a-people", "Админ · участники"],
   ["p-a-attend", "Админ · явка"],
   ["p-a-award", "Админ · баллы"],
+  ["p-a-coins", "Админ · ЛЭТИ-КОИНы"],
+  ["p-a-changes", "Админ · заявки анкеты"],
+  ["p-a-change", "Админ · заявка"],
+  ["p-a-diplomas", "Админ · дипломы"],
   ["p-a-apps", "Админ · абитуриенты"],
   ["p-a-person", "Админ · человек"],
   ["p-a-stats", "Админ · статистика"],
@@ -53,8 +63,43 @@ function statsDatesManual() {
   statsRangeLabel();
 }
 
-const cabTabs = ["profile", "form", "apps", "points", "docs"];
+const cabTabs = ["profile", "form", "change", "apps", "points", "docs"];
 const legacy = { "p-apps": "apps", "p-profile": "form", "p-points": "points" };
+
+function vkIcon() {
+  return `<img class="vk-ico" src="assets/vk-logo.png" alt="" width="16" height="10" />`;
+}
+
+function applicantFooter() {
+  return `<footer class="site-foot">
+    <div class="wrap foot-inner">
+      <div class="foot-grid">
+        <div>
+          <h4>Поступающим</h4>
+          <a href="https://abit.etu.ru/" target="_blank" rel="noopener">Преимущества СПбГЭТУ «ЛЭТИ»</a>
+          <a href="https://abit.etu.ru/ru/postupayushhim/bakalavriat-i-specialitet/napravleniya-podgotovki/" target="_blank" rel="noopener">Направления подготовки</a>
+          <a href="https://abit.etu.ru/ru/postupayushhim/bakalavriat-i-specialitet/" target="_blank" rel="noopener">Приём на первый курс</a>
+          <a href="https://abit.etu.ru/ru/postupayushhim/magistratura/" target="_blank" rel="noopener">Приём в магистратуру</a>
+          <a href="https://abit.etu.ru/ru/postupayushhim/aspirantura/" target="_blank" rel="noopener">Приём в аспирантуру</a>
+          <a href="https://abit.etu.ru/ru/postupayushhim/dovuzovskaya-podgotovka/" target="_blank" rel="noopener">Довузовская подготовка</a>
+        </div>
+        <div>
+          <h4>Приёмная комиссия</h4>
+          <a href="tel:+78123258705">+7 812 325-87-05</a>
+          <a href="mailto:prcom@etu.ru">prcom@etu.ru</a>
+          <a class="foot-vk" href="https://vk.ru/vleti" target="_blank" rel="noopener">${vkIcon()}Поступающим на 1 курс</a>
+          <a class="foot-vk" href="https://vk.ru/eltech_magister" target="_blank" rel="noopener">${vkIcon()}Поступающим в магистратуру</a>
+          <a class="foot-cta" href="#p-contacts" onclick="go('p-contacts');return false;">Контакты</a>
+        </div>
+        <div>
+          <h4>СПбГЭТУ «ЛЭТИ»</h4>
+          <a href="https://etu.ru/" target="_blank" rel="noopener">Официальный сайт университета</a>
+          <p>ул. Профессора Попова, д. 5, Санкт-Петербург</p>
+        </div>
+      </div>
+    </div>
+  </footer>`;
+}
 
 function applicantHeader() {
   return `<header class="top app-top">
@@ -83,6 +128,8 @@ function adminNavHTML() {
     <button type="button" data-nav="events" onclick="go('p-a-list')">Мероприятия</button>
     <button type="button" data-nav="attend" onclick="go('p-a-attend')">Посещаемость</button>
     <button type="button" data-nav="award" onclick="go('p-a-award')">Баллы и сертификаты</button>
+    <button type="button" data-nav="coins" onclick="go('p-a-coins')">ЛЭТИ-КОИНы</button>
+    <button type="button" data-nav="changes" onclick="go('p-a-changes')">Заявки</button>
     <button type="button" data-nav="apps" onclick="go('p-a-apps')">Абитуриенты</button>
     <button type="button" data-nav="stats" onclick="go('p-a-stats')">Статистика</button>
   </aside>`;
@@ -152,6 +199,9 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("section.screen[data-role='applicant']").forEach((sec) => {
     sec.insertAdjacentHTML("afterbegin", applicantHeader());
   });
+  document.querySelectorAll("section.screen:not(.admin)").forEach((sec) => {
+    sec.insertAdjacentHTML("beforeend", applicantFooter());
+  });
   document.querySelectorAll("section.screen[data-role='admin']").forEach(decorateAdmin);
   document.querySelectorAll("#p-cabinet .cab-nav button[data-tab]").forEach((b) => {
     b.onclick = () => go("p-cabinet", b.dataset.tab);
@@ -178,6 +228,33 @@ window.addEventListener("DOMContentLoaded", () => {
     if (certOn && certMore) {
       certOn.onchange = () => {
         certMore.hidden = certOn.value !== "yes";
+      };
+    }
+    const kind = create.querySelector(".js-kind");
+    const confMore = create.querySelector(".js-conf-more");
+    if (kind && confMore) {
+      kind.onchange = () => {
+        confMore.hidden = kind.value !== "conference";
+      };
+    }
+    const aud = create.querySelector(".js-aud");
+    const grades = create.querySelector(".js-grades");
+    const pointsBlock = create.querySelector(".js-points-block");
+    const coinsWrap = create.querySelector(".js-coins-wrap");
+    function syncAud() {
+      const v = aud?.value || "school";
+      const students = v === "student" || v === "both";
+      if (grades) grades.hidden = v === "student";
+      if (pointsBlock) pointsBlock.hidden = students;
+      if (coinsWrap) coinsWrap.hidden = !students;
+    }
+    if (aud) aud.onchange = syncAud;
+    syncAud();
+    const coinsOn = create.querySelector(".js-coins-on");
+    const coinsMore = create.querySelector(".js-coins-more");
+    if (coinsOn && coinsMore) {
+      coinsOn.onchange = () => {
+        coinsMore.hidden = coinsOn.value !== "yes";
       };
     }
     const acts = document.getElementById("event-acts");
@@ -305,9 +382,149 @@ window.addEventListener("DOMContentLoaded", () => {
     };
   }
 
+  const chg = document.getElementById("chg-rows");
+  const addChg = document.getElementById("add-chg");
+  function addChgRow() {
+    const row = document.createElement("div");
+    row.className = "chg-row";
+    row.innerHTML = `<select>
+        <option>Фамилия</option><option>Имя</option><option>Отчество</option>
+        <option>Телефон</option><option>Email</option><option>Школа / вуз</option>
+        <option>Город</option><option>Регион</option>
+      </select>
+      <input placeholder="Новое значение" />
+      <button type="button" class="btn btn-line js-del-chg">×</button>`;
+    chg.appendChild(row);
+    row.querySelector(".js-del-chg").onclick = () => {
+      if (chg.children.length > 1) row.remove();
+    };
+  }
+  if (chg && addChg) {
+    addChg.onclick = addChgRow;
+    addChgRow();
+  }
+
+  const MAX_SUP = 2;
+  function bindSupervisors(root) {
+    if (!root) return;
+    const list = root.querySelector(".js-sup-list");
+    const addBtn = root.querySelector(".js-add-sup");
+    if (!list || !addBtn) return;
+    function syncAdd() {
+      addBtn.hidden = list.children.length >= MAX_SUP;
+    }
+    function addSupervisor() {
+      if (list.children.length >= MAX_SUP) return;
+      const n = list.children.length + 1;
+      const card = document.createElement("div");
+      card.className = "q-card";
+      card.innerHTML = `<div class="q-head"><strong>Руководитель ${n}</strong><button type="button" class="btn btn-line js-del-sup">Удалить</button></div>
+        <div class="form-grid">
+          <div class="field"><label>Фамилия</label><input /></div>
+          <div class="field"><label>Имя</label><input /></div>
+          <div class="field"><label>Отчество</label><input /></div>
+          <div class="field span2"><label>Место работы</label><input /></div>
+          <div class="field span2"><label>Должность</label><input /></div>
+        </div>`;
+      list.appendChild(card);
+      card.querySelector(".js-del-sup").onclick = () => {
+        if (list.children.length > 1) card.remove();
+        syncAdd();
+      };
+      syncAdd();
+    }
+    addBtn.onclick = addSupervisor;
+    addSupervisor();
+  }
+
+  const editHost = document.getElementById("conf-edit-form");
+  const srcForm = document.getElementById("p-conf-form");
+  if (editHost && srcForm) {
+    srcForm.querySelectorAll(".panel.form").forEach((panel) => {
+      editHost.appendChild(panel.cloneNode(true));
+    });
+    const first = editHost.querySelector("h3");
+    if (first) first.textContent = "Данные заявки";
+    const save = editHost.querySelector(".btn-pri");
+    if (save) {
+      save.textContent = "Сохранить изменения";
+      save.removeAttribute("onclick");
+    }
+  }
+  bindSupervisors(srcForm);
+  bindSupervisors(editHost);
+
+  const coinAll = document.querySelector(".js-coin-all");
+  if (coinAll) {
+    coinAll.onchange = () => {
+      document.querySelectorAll(".js-coin-st").forEach((el) => {
+        el.checked = coinAll.checked;
+      });
+    };
+  }
+
+  const DEG_PEOPLE = [
+    { id: 1, name: "Фамилия Имя Отчество", topic: "Распознавание жестов" },
+    { id: 2, name: "Фамилия Имя Отчество", topic: "Модуль расписания" },
+    { id: 3, name: "Фамилия Имя Отчество", topic: "Стенд робототехники" },
+    { id: 4, name: "Фамилия Имя Отчество", topic: "Цифровой двойник" },
+    { id: 5, name: "Фамилия Имя Отчество", topic: "Сеть на ПЛИС" },
+  ];
+  const assigned = { 1: new Set(), 2: new Set(), 3: new Set() };
+  function takenExcept(deg) {
+    const s = new Set();
+    [1, 2, 3].forEach((d) => {
+      if (d !== deg) assigned[d].forEach((id) => s.add(id));
+    });
+    return s;
+  }
+  function renderDeg() {
+    const grid = document.getElementById("deg-grid");
+    if (!grid) return;
+    [1, 2, 3].forEach((deg) => {
+      const list = grid.querySelector(`[data-deg="${deg}"] .js-deg-list`);
+      const taken = takenExcept(deg);
+      list.innerHTML = DEG_PEOPLE.filter((p) => !taken.has(p.id))
+        .map(
+          (p) =>
+            `<label class="check-row"><span>${p.name}<small class="place">${p.topic}</small></span><input type="checkbox" data-id="${p.id}" data-deg="${deg}" ${assigned[deg].has(p.id) ? "checked" : ""} /></label>`
+        )
+        .join("");
+    });
+  }
+  const degGrid = document.getElementById("deg-grid");
+  if (degGrid) {
+    degGrid.addEventListener("change", (e) => {
+      const t = e.target;
+      if (t.classList.contains("js-deg-all")) {
+        const deg = Number(t.dataset.deg);
+        const taken = takenExcept(deg);
+        DEG_PEOPLE.forEach((p) => {
+          if (!taken.has(p.id)) {
+            if (t.checked) assigned[deg].add(p.id);
+            else assigned[deg].delete(p.id);
+          }
+        });
+        renderDeg();
+        return;
+      }
+      if (t.dataset.deg && t.dataset.id) {
+        const deg = Number(t.dataset.deg);
+        const id = Number(t.dataset.id);
+        if (t.checked) {
+          assigned[deg].add(id);
+          [1, 2, 3].forEach((d) => {
+            if (d !== deg) assigned[d].delete(id);
+          });
+        } else assigned[deg].delete(id);
+        renderDeg();
+      }
+    });
+    renderDeg();
+  }
   const bar = document.getElementById("tabs");
-  screens.forEach(([id, label], i) => {
-    if (i === 6) {
+  screens.forEach(([id, label]) => {
+    if (id === "p-a-login") {
       const sep = document.createElement("span");
       sep.className = "sep";
       bar.appendChild(sep);

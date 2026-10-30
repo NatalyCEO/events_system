@@ -6,7 +6,7 @@
   <title>Макеты ЛК мероприятий · ЛЭТИ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=reg2" />
+  <link rel="stylesheet" href="styles.css?v=req34" />
 </head>
 <body>
   <div class="preview-bar">
@@ -19,11 +19,8 @@
       <div class="hero">
         <div>
           <h2>Приходите в<br /><em>Первый электротехнический</em></h2>
-          <p>Экскурсии, встречи с факультетами и дни открытых дверей — чтобы увидеть ЛЭТИ своими глазами.</p>
-          <div class="search">
-            <input placeholder="Название, дата, формат…" />
-            <button>Найти</button>
-          </div>
+          <p>Экскурсии, встречи с факультетами, конференции и дни открытых дверей — чтобы увидеть ЛЭТИ своими глазами.</p>
+          <a class="hero-more" href="#catalog-events" onclick="document.getElementById('catalog-events').scrollIntoView({behavior:'smooth'});return false;">К мероприятиям →</a>
         </div>
         <div class="hero-card">
           <span class="chip">Ближайшее · 12 баллов</span>
@@ -40,7 +37,7 @@
         <div class="stat"><b>3</b><span>формата: очно, онлайн и смешанный</span></div>
         <div class="stat"><b>12</b><span>экскурсий и мастер-классов в программе</span></div>
       </div>
-      <div class="hrow">
+      <div class="hrow" id="catalog-events">
         <h3>Мероприятия</h3>
         <div class="pills">
           <button class="pill on">Все</button>
@@ -48,6 +45,9 @@
           <button class="pill">Онлайн</button>
           <button class="pill">Есть места</button>
         </div>
+      </div>
+      <div class="hrow">
+        <h3>Дни открытых дверей</h3>
       </div>
       <div class="grid">
         <article class="card" onclick="go('p-event')">
@@ -78,9 +78,101 @@
           </div>
         </article>
       </div>
+      <div class="hrow catalog-next">
+        <h3>Конференции</h3>
+      </div>
+      <div class="grid">
+        <article class="card" onclick="go('p-conf')">
+          <div class="cover c2"><div class="date-badge"><b>15</b><span>АПР</span></div></div>
+          <div class="card-body">
+            <div class="badges"><span class="b b-blue">Очно</span><span class="b">конференция</span></div>
+            <h4>Наука настоящего и будущего</h4>
+            <div class="place">ЛЭТИ · апрель 2027</div>
+            <div class="card-foot"><span>приём докладов</span><span class="b b-ok">запись открыта</span></div>
+          </div>
+        </article>
+      </div>
+      <div class="all-events-foot">
+        <button class="btn btn-gold" onclick="go('p-events')">Все мероприятия</button>
+      </div>
       <div class="say">
         <img src="assets/cat-wave.jpg" alt="" />
         <div class="bubble">До встречи в ЛЭТИ</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="p-events" data-role="applicant">
+    <div class="wrap">
+      <div class="hrow">
+        <h2 style="margin:0">Все мероприятия</h2>
+      </div>
+      <div class="filter-bar">
+        <label>Уровень образования
+          <select>
+            <option>Все</option>
+            <option>Школьники</option>
+            <option>Студенты</option>
+          </select>
+        </label>
+        <label>Тип
+          <select>
+            <option>Все</option>
+            <option>День открытых дверей</option>
+            <option>Конференции</option>
+            <option>Олимпиады</option>
+          </select>
+        </label>
+        <label>Формат
+          <select>
+            <option>Все</option>
+            <option>Очно</option>
+            <option>Онлайн</option>
+            <option>Смешанный</option>
+          </select>
+        </label>
+      </div>
+      <h3>Актуальные</h3>
+      <div class="grid">
+        <article class="card" onclick="go('p-event')">
+          <div class="cover c1"><div class="date-badge"><b>14</b><span>ДЕК</span></div></div>
+          <div class="card-body">
+            <div class="badges"><span class="b b-blue">Очно</span><span class="b">школьники 8–11</span><span class="b b-gold">12 баллов</span></div>
+            <h4>День открытых дверей ЛЭТИ</h4>
+            <div class="place">ул. Профессора Попова, 5 · 11:00–16:00</div>
+            <div class="card-foot"><span>осталось 86 мест</span><span class="b b-ok">запись открыта</span></div>
+          </div>
+        </article>
+        <article class="card" onclick="go('p-conf')">
+          <div class="cover c2"><div class="date-badge"><b>15</b><span>АПР</span></div></div>
+          <div class="card-body">
+            <div class="badges"><span class="b b-blue">Очно</span><span class="b">студенты и аспиранты</span><span class="b">конференция</span></div>
+            <h4>Наука настоящего и будущего</h4>
+            <div class="place">конференция · ЛЭТИ · апрель 2027</div>
+            <div class="card-foot"><span>приём докладов</span><span class="b b-ok">запись открыта</span></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="cover c3"><div class="date-badge"><b>21</b><span>ДЕК</span></div></div>
+          <div class="card-body">
+            <div class="badges"><span class="b b-blue">Онлайн</span><span class="b">студенты</span><span class="b b-gold">5 баллов</span></div>
+            <h4>Вечер факультетов</h4>
+            <div class="place">онлайн · 18:00–20:00</div>
+            <div class="card-foot"><span>мест нет</span><span class="b b-wait">лист ожидания</span></div>
+          </div>
+        </article>
+      </div>
+      <h3 style="margin-top:28px">Завершённые</h3>
+      <div class="grid">
+        <article class="card">
+          <div class="cover c1"><div class="date-badge"><b>20</b><span>АПР</span></div></div>
+          <div class="card-body">
+            <div class="badges"><span class="b b-blue">Очно</span><span class="b">школьники</span></div>
+            <h4>ДОД весна 2026</h4>
+            <div class="place">ул. Профессора Попова, 5</div>
+            <div class="card-foot"><span>запись закрыта</span><span class="b">завершено</span></div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -97,6 +189,10 @@
           <div class="panel">
             <h3>О мероприятии</h3>
             <p>Экскурсии по корпусам, встречи с преподавателями, консультации приёмной комиссии. Можно прийти с родителями.</p>
+          </div>
+          <div class="panel note-panel">
+            <h3>Дополнительная информация</h3>
+            <p>Не забудьте паспорт или свидетельство. Если приходите с родителями — возьмите их документы тоже.</p>
           </div>
           <div class="panel">
             <h3>Экскурсии</h3>
@@ -166,8 +262,8 @@
     <div class="wrap" style="max-width:640px">
       <div class="panel form">
         <h3>Запись на День открытых дверей</h3>
-        <p class="place">Поля подтянуты из профиля. Правка сохранится в анкете и в снимке заявки.</p>
-        <label>ФИО</label><input value="Фамилия Имя Отчество" />
+        <p class="place">Данные из анкеты подставлены и не редактируются здесь. Чтобы поменять ФИО или школу — заявка в кабинете.</p>
+        <label>ФИО</label><input value="Фамилия Имя Отчество" disabled />
         <label>Слот</label>
         <select><option>11:00 экскурсия «Главный корпус» · 12 мест</option></select>
         <label>Сопровождающие</label>
@@ -175,6 +271,309 @@
         <label class="check"><input type="checkbox" checked /> Регистрируясь, подтверждаю, что приду</label>
         <button class="btn btn-pri" onclick="go('p-cabinet','apps')">Записаться</button>
       </div>
+    </div>
+  </section>
+
+  <section class="screen" id="p-conf" data-role="applicant">
+    <div class="wrap">
+      <div class="event-hero">
+        <div class="badges"><span class="b b-gold">конференция</span><span class="b" style="background:#fff;color:#023370">Очно</span></div>
+        <h2>Наука настоящего и будущего</h2>
+      </div>
+      <div class="cols">
+        <div>
+          <div class="panel">
+            <h3>О конференции</h3>
+            <p>Доклады студентов и аспирантов. Секции, публикация в сборнике, дипломы I–III степени.</p>
+          </div>
+          <div class="panel">
+            <h3>Секции конференции</h3>
+            <ul class="sec-names">
+              <li>Информационные радиотехнические системы и устройства</li>
+              <li>Информатика и управление в технических системах и ВТ</li>
+              <li>Программная инженерия и автономные интеллектуальные системы</li>
+              <li>Искусственный интеллект в прикладных областях</li>
+              <li>Алгоритмическая математика</li>
+              <li>Управление и обработка информации</li>
+              <li>Приборостроение</li>
+              <li>Лингвистика</li>
+              <li>Электроника, нанотехнологии, наноматериалы</li>
+              <li>Системный анализ и информационная безопасность</li>
+              <li>Электрические системы, привод, автоматика и электротехнологии</li>
+              <li>Биотехнические системы и технологии</li>
+              <li>Техносферная безопасность</li>
+              <li>Реклама и связи с общественностью</li>
+              <li>Современные тренды управления качеством и цифровая экономика</li>
+              <li>Инновационное проектирование: от реальных объектов к цифровым двойникам.</li>
+            </ul>
+          </div>
+          <div class="panel note-panel">
+            <h3>Дополнительная информация</h3>
+            <p>Возьмите паспорт. Для очного доклада бейдж выдадут на регистрации.</p>
+          </div>
+        </div>
+        <aside>
+          <div class="ticket sticky">
+            <div class="ticket-top">
+              <div class="cal"><b>21</b><span>МАЙ</span></div>
+              <div>
+                <div class="ticket-kicker">Конференция · 2027</div>
+                <h3>Наука настоящего и будущего</h3>
+              </div>
+            </div>
+            <ul class="ticket-meta">
+              <li>Студенты и аспиранты</li>
+              <li>16 секций, очный доклад</li>
+              <li>Публикация в сборнике и дипломы I–III степени</li>
+            </ul>
+            <button class="btn btn-pri" onclick="go('p-conf-form')">Подать заявку</button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="p-conf-form" data-role="applicant">
+    <div class="wrap" style="max-width:860px">
+      <p class="place"><a class="linkish" onclick="go('p-conf')">← к карточке</a></p>
+      <div class="panel form">
+        <h3>Заявка на конференцию</h3>
+        <p class="place">ФИО, телефон, почта, пол и дата рождения взяты из кабинета и не правятся в этой форме.</p>
+        <div class="form-grid">
+          <div class="field span2"><label>ФИО</label><input disabled /></div>
+          <div class="field"><label>Телефон</label><input disabled /></div>
+          <div class="field"><label>Почта</label><input disabled /></div>
+          <div class="field"><label>Пол</label><input disabled /></div>
+          <div class="field"><label>Дата рождения</label><input disabled /></div>
+        </div>
+      </div>
+      <div class="panel form">
+        <h3>Гражданство и адрес по паспорту</h3>
+        <label>Гражданство</label>
+        <select>
+          <option value="">Выберите</option>
+          <option>Российская Федерация</option>
+          <option>Республика Беларусь</option>
+          <option>Республика Казахстан</option>
+          <option>Другое</option>
+        </select>
+        <label>Страна</label>
+        <select>
+          <option value="">Выберите</option>
+          <option>Российская Федерация</option>
+          <option>Республика Беларусь</option>
+          <option>Республика Казахстан</option>
+          <option>Другое</option>
+        </select>
+        <div class="form-grid">
+          <div class="field"><label>Регион</label>
+            <select>
+              <option value="">Выберите</option>
+              <option>Санкт-Петербург</option>
+              <option>Москва</option>
+              <option>Ленинградская область</option>
+              <option>Московская область</option>
+              <option>Челябинская область</option>
+              <option>Свердловская область</option>
+              <option>Новосибирская область</option>
+              <option>Краснодарский край</option>
+              <option>Республика Татарстан</option>
+              <option>Нижегородская область</option>
+              <option>Ростовская область</option>
+              <option>Самарская область</option>
+              <option>Пермский край</option>
+              <option>Воронежская область</option>
+              <option>Красноярский край</option>
+              <option>Другой регион</option>
+            </select>
+          </div>
+          <div class="field"><label>Район</label>
+            <select>
+              <option value="">Не заполняется / выберите</option>
+              <option>Адмиралтейский</option>
+              <option>Василеостровский</option>
+              <option>Выборгский</option>
+              <option>Калининский</option>
+              <option>Кировский</option>
+              <option>Колпинский</option>
+              <option>Красногвардейский</option>
+              <option>Красносельский</option>
+              <option>Московский</option>
+              <option>Невский</option>
+              <option>Петроградский</option>
+              <option>Петродворцовый</option>
+              <option>Приморский</option>
+              <option>Пушкинский</option>
+              <option>Фрунзенский</option>
+              <option>Центральный</option>
+            </select>
+          </div>
+          <div class="field"><label>Город</label>
+            <select>
+              <option value="">Выберите</option>
+              <option>Санкт-Петербург</option>
+              <option>Москва</option>
+              <option>Челябинск</option>
+              <option>Екатеринбург</option>
+              <option>Новосибирск</option>
+              <option>Казань</option>
+              <option>Нижний Новгород</option>
+              <option>Ростов-на-Дону</option>
+              <option>Самара</option>
+              <option>Краснодар</option>
+              <option>Воронеж</option>
+              <option>Пермь</option>
+              <option>Другой город</option>
+            </select>
+          </div>
+          <div class="field"><label>Населённый пункт</label>
+            <select>
+              <option value="">Выберите</option>
+              <option>не требуется</option>
+              <option>посёлок Парголово</option>
+              <option>посёлок Шушары</option>
+              <option>посёлок Металлострой</option>
+              <option>село</option>
+              <option>другой населённый пункт</option>
+            </select>
+          </div>
+        </div>
+        <label>Улица</label>
+        <input placeholder="ул. Профессора Попова" />
+        <label class="check"><input type="checkbox" class="js-no-street" /> Нет улицы</label>
+        <div class="form-grid addr-mini">
+          <div class="field"><label>Дом</label><input /></div>
+          <div class="field"><label>Литера</label><input /></div>
+          <div class="field"><label>Строение</label><input /></div>
+          <div class="field"><label>Корпус</label><input /></div>
+          <div class="field"><label>Квартира</label><input /></div>
+          <div class="field"><label>Индекс</label><input /></div>
+        </div>
+      </div>
+      <div class="panel form">
+        <h3>Образование</h3>
+        <label>Образовательная организация</label>
+        <select>
+          <option value="">Выберите</option>
+          <option>СПбГЭТУ «ЛЭТИ»</option>
+          <option>СПбГУ</option>
+          <option>СПбПУ Петра Великого</option>
+          <option>ИТМО</option>
+          <option>СПбГБПОУ «Радиотехнический колледж»</option>
+        </select>
+        <div class="form-grid">
+          <div class="field"><label>Курс</label><input /></div>
+          <div class="field"><label>Уровень</label>
+            <select><option value="">Выберите</option><option>бакалавриат</option><option>магистратура</option><option>специалитет</option><option>аспирантура</option></select>
+          </div>
+          <div class="field"><label>Год обучения</label><input /></div>
+          <div class="field span2"><label>Специальность</label><input /></div>
+        </div>
+        <p class="place">Сведения о месте учёбы / работы</p>
+        <label class="check sq"><input type="checkbox" /> Я учусь</label>
+        <label class="check sq"><input type="checkbox" /> Я работаю</label>
+        <div class="form-grid">
+          <div class="field"><label>Страна учёбы / работы</label>
+            <select>
+              <option value="">Выберите</option>
+              <option>Российская Федерация</option>
+              <option>Республика Беларусь</option>
+              <option>Республика Казахстан</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="field"><label>Город учёбы / работы</label>
+            <select>
+              <option value="">Выберите</option>
+              <option>Санкт-Петербург</option>
+              <option>Москва</option>
+              <option>Челябинск</option>
+              <option>Екатеринбург</option>
+              <option>Новосибирск</option>
+              <option>Казань</option>
+              <option>Другой город</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="panel form">
+        <h3>Руководители</h3>
+        <div class="js-sup-list"></div>
+        <button type="button" class="btn btn-line js-add-sup">+ Руководитель</button>
+      </div>
+      <div class="panel form">
+        <h3>Участие</h3>
+        <label>Тип участия</label>
+        <select><option>Докладчик</option><option>Слушатель</option></select>
+        <label class="check"><input type="checkbox" checked /> Публикация доклада в сборнике</label>
+        <label>Тема доклада</label>
+        <input />
+        <div class="form-grid">
+          <div class="field"><label>Форма доклада</label>
+            <select><option>очная</option><option>заочная</option><option>стенд</option></select>
+          </div>
+          <div class="field"><label>Общежитие</label>
+            <select><option>Нет, не нуждаюсь</option><option>Да, нужно</option></select>
+          </div>
+          <div class="field span2"><label>Секция</label>
+            <select>
+              <option>Информационные радиотехнические системы и устройства</option>
+              <option>Информатика и управление в технических системах и ВТ</option>
+              <option>Программная инженерия и автономные интеллектуальные системы</option>
+              <option>Искусственный интеллект в прикладных областях</option>
+              <option>Алгоритмическая математика</option>
+              <option>Управление и обработка информации</option>
+              <option>Приборостроение</option>
+              <option>Лингвистика</option>
+              <option>Электроника, нанотехнологии, наноматериалы</option>
+              <option>Системный анализ и информационная безопасность</option>
+              <option>Электрические системы, привод, автоматика и электротехнологии</option>
+              <option>Биотехнические системы и технологии</option>
+              <option>Техносферная безопасность</option>
+              <option>Реклама и связи с общественностью</option>
+              <option>Современные тренды управления качеством и цифровая экономика</option>
+              <option>Инновационное проектирование: от реальных объектов к цифровым двойникам.</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-pri" style="margin-top:14px" onclick="go('p-conf-files')">Отправить заявку</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="p-conf-files" data-role="applicant">
+    <div class="wrap" style="max-width:860px">
+      <p class="place"><a class="linkish" onclick="go('p-cabinet','apps')">← к записям</a></p>
+      <h2>Загрузка материалов</h2>
+      <div class="file-grid">
+        <label class="drop-box">
+          <input type="file" />
+          <strong>Тезисы доклада</strong>
+          <span>Нажмите или перетащите файл</span>
+          <em>Максимум 100 МБ · doc, docx, pdf</em>
+        </label>
+        <label class="drop-box">
+          <input type="file" />
+          <strong>Стенд / презентация</strong>
+          <span>Нажмите или перетащите файл</span>
+          <em>Максимум 100 МБ · pdf, ppt, pptx</em>
+        </label>
+        <label class="drop-box">
+          <input type="file" />
+          <strong>Рецензия</strong>
+          <span>Нажмите или перетащите файл</span>
+          <em>Максимум 100 МБ · doc, docx, pdf</em>
+        </label>
+        <label class="drop-box">
+          <input type="file" />
+          <strong>Экспертное заключение</strong>
+          <span>Нажмите или перетащите файл</span>
+          <em>Максимум 100 МБ · doc, docx, pdf</em>
+        </label>
+      </div>
+      <h3 style="margin:28px 0 12px">Заявка</h3>
+      <p class="place" style="margin-bottom:14px">Можно отредактировать заявку, которую заполнили при регистрации.</p>
+      <div id="conf-edit-form"></div>
     </div>
   </section>
 
@@ -216,15 +615,20 @@
                 <div><strong>Вечер факультетов</strong><div class="place">21 декабря 2026 · лист ожидания, позиция 4</div></div>
                 <span class="b b-wait">лист ожидания</span>
               </div>
+              <div class="list-row">
+                <div><strong>Наука настоящего и будущего</strong><div class="place">конференция · заявка принята</div></div>
+                <button class="btn btn-pri" onclick="go('p-conf-files')">Добавить материалы</button>
+              </div>
             </div>
           </div>
 
           <div class="cab-pane" data-pane="form">
             <div class="panel form form-grid">
               <h3 class="span2">Анкета</h3>
-              <div class="field span2"><label>ФИО</label><input value="Фамилия Имя Отчество" /></div>
+              <p class="place span2">Поля нельзя менять здесь. Нужна правка — отправьте заявку, её рассмотрит администратор.</p>
+              <div class="field span2"><label>ФИО</label><input value="Фамилия Имя Отчество" disabled /></div>
               <div class="field"><label>Регион</label>
-                <select>
+                <select disabled>
                   <option selected>Санкт-Петербург</option>
                   <option>Ленинградская область</option>
                   <option>Москва</option>
@@ -232,7 +636,7 @@
                 </select>
               </div>
               <div class="field"><label>Город</label>
-                <select>
+                <select disabled>
                   <option selected>Санкт-Петербург</option>
                   <option>Гатчина</option>
                   <option>Выборг</option>
@@ -240,7 +644,7 @@
                 </select>
               </div>
               <div class="field span2"><label>Образовательная организация</label>
-                <select>
+                <select disabled>
                   <option selected>ГБОУ лицей № 239</option>
                   <option>ГБОУ школа № 45</option>
                   <option>СПб ГБПОУ «Радиотехнический колледж»</option>
@@ -248,7 +652,7 @@
                 </select>
               </div>
               <div class="field"><label>Год поступления в университет</label>
-                <select>
+                <select disabled>
                   <option selected>2026</option>
                   <option>2027</option>
                   <option>2028</option>
@@ -256,25 +660,42 @@
                   <option>2030</option>
                 </select>
               </div>
-              <div class="field"><label>Почта</label><input type="email" value="maria.ivanova@mail.ru" /></div>
-              <div class="field"><label>Телефон</label><input type="tel" value="+7 921 000-00-00" /></div>
-              <div class="field"><label>Дата рождения</label><input type="date" value="2009-05-14" /></div>
+              <div class="field"><label>Почта</label><input type="email" value="maria.ivanova@mail.ru" disabled /></div>
+              <div class="field"><label>Телефон</label><input type="tel" value="+7 921 000-00-00" disabled /></div>
+              <div class="field"><label>Дата рождения</label><input type="date" value="2009-05-14" disabled /></div>
               <div class="field"><label>Пол</label>
-                <select>
+                <select disabled>
                   <option selected>Женский</option>
                   <option>Мужской</option>
                 </select>
               </div>
-              <div class="field span2"><label>Адрес регистрации <span class="opt">необязательно</span></label><input value="Санкт-Петербург, ул. Садовая, 1" /></div>
-              <div class="field span2">
-                <label>Документ, удостоверяющий личность <span class="opt">необязательно</span></label>
-                <div class="file-now">загружен: паспорт.pdf · <button type="button" class="linkish">заменить</button></div>
-                <input type="file" />
-              </div>
-              <button class="btn btn-pri span2" style="width:100%;margin-top:8px">Сохранить анкету</button>
+              <button class="btn btn-pri span2" style="width:100%;margin-top:8px" onclick="go('p-cabinet','change')">Запросить изменение</button>
               <hr class="span2" style="border:0;border-top:1px solid var(--line);margin:20px 0 8px" />
               <p class="place span2">Удаление кабинета: история у комиссии останется, новые записи и рассылки — нет, пока не зарегистрируетесь снова.</p>
               <button class="btn btn-danger">Удалить кабинет</button>
+            </div>
+          </div>
+
+          <div class="cab-pane" data-pane="change">
+            <div class="panel form">
+              <h3>Заявка на изменение анкеты</h3>
+              <p class="place">Выберите поля, укажите новые значения и причину. Администратор увидит текущую анкету и черновик с правками.</p>
+              <div id="chg-rows"></div>
+              <button type="button" class="btn btn-line" id="add-chg">Добавить поле</button>
+              <label>Причина изменения</label>
+              <textarea rows="3" placeholder="Например: сменила школу, ошибка в отчестве"></textarea>
+              <button class="btn btn-pri" style="margin-top:12px">Отправить заявку</button>
+            </div>
+            <div class="panel">
+              <h3>Последние заявки</h3>
+              <div class="list-row">
+                <div><strong>Телефон, школа</strong><div class="place">12.10.2026 · на рассмотрении</div></div>
+                <span class="b b-wait">ожидает</span>
+              </div>
+              <div class="list-row">
+                <div><strong>Email</strong><div class="place">03.09.2026 · одобрено, письмо отправлено</div></div>
+                <span class="b b-ok">одобрено</span>
+              </div>
             </div>
           </div>
 
@@ -294,6 +715,12 @@
                   <button class="btn btn-danger">Отменить</button>
                 </div>
               </div>
+              <div class="list-row">
+                <div><strong>Наука настоящего и будущего</strong><div class="place">конференция · секция «Программная инженерия» · докладчик</div></div>
+                <div class="row-actions">
+                  <button class="btn btn-pri" onclick="go('p-conf-files')">Добавить материалы</button>
+                </div>
+              </div>
             </div>
             <div class="panel">
               <h3>Прошедшие</h3>
@@ -304,9 +731,11 @@
           </div>
 
           <div class="cab-pane" data-pane="points">
-            <div class="kpi kpi-2">
+            <div class="kpi">
               <div class="panel"><b>17</b><span class="place">баллов начислено</span></div>
-              <div class="panel"><b>1</b><span class="place">сертификат выдан</span></div>
+              <div class="panel"><b>1</b><span class="place">сертификат</span></div>
+              <div class="panel"><b>2</b><span class="place">ЛЭТИ-КОИНа</span></div>
+              <div class="panel"><b>1</b><span class="place">диплом</span></div>
             </div>
             <div class="panel">
               <h3>История начислений</h3>
@@ -319,9 +748,23 @@
               </table>
             </div>
             <div class="panel">
-              <h3>Сертификаты</h3>
+              <h3>ЛЭТИ-КОИНы</h3>
+              <table>
+                <thead><tr><th>Номер</th><th>Мероприятие</th><th>Баллы</th></tr></thead>
+                <tbody>
+                  <tr><td>NNF-2026-0001</td><td>Наука настоящего и будущего</td><td>2</td></tr>
+                  <tr><td>KAF-VT-0004</td><td>Кафедральная встреча ВТ</td><td>1</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="panel">
+              <h3>Сертификаты и дипломы</h3>
               <div class="list-row">
                 <div>Сертификат участника · ДОД весна 2026</div>
+                <button class="btn btn-pri">Скачать</button>
+              </div>
+              <div class="list-row">
+                <div><strong>Диплом I степени</strong><div class="place">Наука настоящего и будущего · секция «Программная инженерия» · тема доклада в файле</div></div>
                 <button class="btn btn-pri">Скачать</button>
               </div>
             </div>
@@ -345,6 +788,100 @@
           </div>
 
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen" id="p-contacts" data-role="applicant">
+    <div class="wrap">
+      <div class="contacts-hero">
+        <div>
+          <span class="contacts-chip">Приёмная комиссия</span>
+          <h2>Мы отвечаем на вопросы о поступлении</h2>
+          <p>Сотрудники приёмной комиссии СПбГЭТУ «ЛЭТИ» консультируют абитуриентов и родителей по приёму на 1-й курс и в магистратуру: направления, места, документы, сроки и зачисление.</p>
+          <div class="soc-row">
+            <a class="soc-link" href="https://abit.etu.ru/" target="_blank" rel="noopener">Сайт поступления</a>
+          </div>
+        </div>
+        <img src="assets/cat-wave.jpg" alt="" />
+      </div>
+
+      <div class="contact-tiles">
+        <a class="contact-tile" href="tel:+78123258705">
+          <span>Телефон</span>
+          <b>+7 812 325-87-05</b>
+        </a>
+        <a class="contact-tile" href="mailto:prcom@etu.ru">
+          <span>Почта</span>
+          <b>prcom@etu.ru</b>
+        </a>
+        <div class="contact-tile">
+          <span>Часы работы</span>
+          <b>пн–пт, 10:00–17:00</b>
+        </div>
+        <div class="contact-tile">
+          <span>Адрес</span>
+          <b>Попова, 5, корп. 5, каб. 5313</b>
+          <small>метро Петроградская</small>
+        </div>
+      </div>
+
+      <div class="cols contacts-body">
+        <div>
+          <div class="panel">
+            <h3>Чем занимается приёмная комиссия</h3>
+            <p class="place">Публикует информацию о направлениях, бюджетных и платных местах, условиях приёма и списке документов. В кампанию принимает заявления, рассказывает о сроках, учитывает индивидуальные достижения и ведёт открытый реестр поступающих.</p>
+          </div>
+          <div class="panel">
+            <h3>Как добраться</h3>
+            <p>197022, Санкт-Петербург, ул. Профессора Попова, д. 5, корпус 5, каб. 5313</p>
+            <iframe class="map-frame" title="Карта" src="https://www.openstreetmap.org/export/embed.html?bbox=30.312%2C59.969%2C30.327%2C59.976&amp;layer=mapnik&amp;marker=59.9725%2C30.3195"></iframe>
+          </div>
+        </div>
+        <aside>
+          <div class="panel contacts-cat-card">
+            <img src="assets/cat-desk.jpg" alt="" />
+            <h3>Запись на мероприятия</h3>
+            <p class="place">Дни открытых дверей и конференции — в личном кабинете. Вопросы о приёме — в приёмную комиссию.</p>
+            <button class="btn btn-pri" onclick="go('p-catalog')">К мероприятиям</button>
+          </div>
+        </aside>
+      </div>
+
+      <h3 class="contacts-h">Наша команда</h3>
+      <div class="staff-grid">
+        <article class="staff-card">
+          <div class="staff-ava" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div>
+            <strong>Фамилия Имя Отчество</strong>
+          </div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-ava" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div>
+            <strong>Фамилия Имя Отчество</strong>
+          </div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-ava" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div>
+            <strong>Фамилия Имя Отчество</strong>
+          </div>
+        </article>
+        <article class="staff-card">
+          <div class="staff-ava" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+          </div>
+          <div>
+            <strong>Фамилия Имя Отчество</strong>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -377,7 +914,9 @@
           <div class="field span2"><label>Имя</label><input /></div>
           <div class="field span2"><label>Отчество</label><input /></div>
           <div class="field span2"><label>Телефон</label><input type="tel" placeholder="+7" /></div>
-          <div class="field span2"><label>Email</label><input type="email" /></div>
+          <div class="field span2"><label>Email</label><input type="email" />
+            <p class="hint place">Кабинет один: почта уникальна, повтор с теми же ФИО и школой на другой почте не создаётся.</p>
+          </div>
           <div class="field"><label>Дата рождения</label><input type="date" /></div>
           <div class="field"><label>Пол</label>
             <select>
@@ -450,6 +989,10 @@
         </div>
         <img src="assets/cat-desk.jpg" alt="" />
       </div>
+      <div class="alert-row">
+        <div class="alert-card warn">До ближайшего мероприятия (ДОД ФКТИ) осталось <strong>два дня</strong> — отправьте списки зарегистрированных.</div>
+        <div class="alert-card bad">ДОД ЛЭТИ: лимит почти выбран, <strong>714 / 800</strong>. Можно добавить места, пока набор открыт.</div>
+      </div>
       <div class="dash-kpis">
         <button type="button" class="m-card ok" onclick="go('p-a-list')">
           <span class="place">Новые записи сегодня</span>
@@ -484,9 +1027,10 @@
         </div>
         <div class="panel">
           <h3>Что сделать сегодня</h3>
+          <div class="todo-row" onclick="go('p-a-people')"><span class="dot warn"></span><div><strong>До ближайшего мероприятия (ДОД ФКТИ) осталось два дня</strong><div class="place">нужно отправить списки зарегистрированных</div></div></div>
+          <div class="todo-row" onclick="go('p-a-event')"><span class="dot bad"></span><div><strong>Лимит ДОД ЛЭТИ почти выбран</strong><div class="place">714 из 800 · добавьте места, если набор ещё идёт</div></div></div>
           <div class="todo-row" onclick="go('p-a-award')"><span class="dot bad"></span><div><strong>Выдать баллы за вечер факультетов</strong><div class="place">86 человек с подтверждённым входом</div></div></div>
           <div class="todo-row" onclick="go('p-a-list')"><span class="dot warn"></span><div><strong>Следить за листом вечера факультетов</strong><div class="place">если отменят запись — очередь подтянется сама</div></div></div>
-          <div class="todo-row" onclick="go('p-a-event')"><span class="dot ok"></span><div><strong>ДОД набирает нормально</strong><div class="place">89% мест, до события ещё есть запас</div></div></div>
         </div>
       </div>
     </div>
@@ -497,6 +1041,16 @@
       <div class="hrow">
         <h3>Мероприятия</h3>
         <button class="btn btn-pri" onclick="go('p-a-form')">Создать</button>
+      </div>
+      <div class="filter-bar admin-filters">
+        <input class="search-wide" placeholder="Поиск по названию" />
+        <label>Аудитория
+          <select>
+            <option>Все</option>
+            <option>Школьники</option>
+            <option>Студенты</option>
+          </select>
+        </label>
       </div>
       <div class="panel">
         <table class="row-link">
@@ -530,6 +1084,14 @@
               <td>186</td>
               <td class="delta">+12</td>
               <td><div class="spark" aria-hidden="true"><i style="height:12%"></i><i style="height:18%"></i><i style="height:22%"></i><i style="height:28%"></i><i style="height:35%"></i><i style="height:40%"></i><i style="height:48%"></i></div></td>
+            </tr>
+            <tr onclick="go('p-a-conf')">
+              <td>15.04.2027</td>
+              <td>Наука настоящего и будущего</td>
+              <td>опубликовано · студенты</td>
+              <td>186 заявок</td>
+              <td class="delta">+9</td>
+              <td><div class="spark" aria-hidden="true"><i style="height:20%"></i><i style="height:28%"></i><i style="height:35%"></i><i style="height:42%"></i><i style="height:50%"></i><i style="height:58%"></i><i style="height:70%"></i></div></td>
             </tr>
           </tbody>
         </table>
@@ -565,6 +1127,31 @@
           <div class="list-row"><div>колледж / студенты вуза</div><span>4%</span></div>
         </div>
       </div>
+      <div class="cols">
+        <div class="panel">
+          <h3>Срез по регионам</h3>
+          <div class="donut-wrap">
+            <div class="donut" style="background: conic-gradient(#023370 0 58%, #3a7bd5 58% 78%, #0b8f8c 78% 90%, #e0a84a 90% 100%);"></div>
+            <ul class="legend">
+              <li><i class="lg-navy"></i>Санкт-Петербург · 58%</li>
+              <li><i class="lg-blue"></i>Ленобласть · 20%</li>
+              <li><i class="lg-teal"></i>Новгородская · 12%</li>
+              <li><i class="lg-gold"></i>Другие · 10%</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Сколько баллов уже есть у записанных</h3>
+          <div class="chart chart-color" style="height:160px">
+            <span class="c1" style="height:22%"></span>
+            <span class="c2" style="height:38%"></span>
+            <span class="c3" style="height:70%"></span>
+            <span class="c6" style="height:44%"></span>
+            <span class="c5" style="height:18%"></span>
+          </div>
+          <div class="chart-lab"><span>0</span><span>1–5</span><span>6–12</span><span>13–20</span><span>21+</span></div>
+        </div>
+      </div>
       <div class="toolbar" style="margin:8px 0 16px">
         <button class="btn btn-pri" onclick="go('p-a-people')">Участники</button>
         <button class="btn btn-line" onclick="go('p-a-attend')">Подтверждение явки</button>
@@ -588,16 +1175,84 @@
     </div>
   </section>
 
+  <section class="screen admin" id="p-a-conf" data-role="admin" data-nav="events">
+    <div class="wrap">
+      <p class="place"><a class="linkish" onclick="go('p-a-list')">← к мероприятиям</a></p>
+      <h3 style="margin:4px 0 16px">Наука настоящего и будущего · конференция</h3>
+      <div class="kpi kpi-5">
+        <div class="panel"><b>186</b><span class="place">заявок</span></div>
+        <div class="panel"><b>142</b><span class="place">загрузили тезисы</span></div>
+        <div class="panel"><b>118</b><span class="place">загрузили презентацию</span></div>
+        <div class="panel"><b>96</b><span class="place">загрузили рецензию</span></div>
+        <div class="panel"><b>81</b><span class="place">загрузили экспертное заключение</span></div>
+      </div>
+      <div class="panel">
+        <h3>Заявки по дням</h3>
+        <div class="chart">
+          <span style="height:22%"></span><span style="height:34%"></span><span style="height:40%"></span>
+          <span style="height:48%"></span><span style="height:62%"></span><span style="height:70%"></span>
+          <span style="height:88%"></span>
+        </div>
+        <div class="chart-lab"><span>9.04</span><span>10.04</span><span>11.04</span><span>12.04</span><span>13.04</span><span>14.04</span><span>15.04</span></div>
+      </div>
+      <div class="toolbar" style="margin:8px 0 16px">
+        <button class="btn btn-pri" onclick="go('p-a-people')">Списки участников</button>
+        <button class="btn btn-pri" onclick="go('p-a-diplomas')">Выдача дипломов</button>
+        <button class="btn btn-line">Скачать списки XLSX</button>
+      </div>
+      <div class="panel form">
+        <h3>Карточка мероприятия</h3>
+        <p class="place">Редактирование открытой конференции.</p>
+        <label>Название</label><input value="Наука настоящего и будущего" />
+        <label>Формат</label><select><option selected>Очно</option><option>Онлайн</option><option>Смешанный</option></select>
+        <label>Дата и время</label><input value="15 апреля 2027" />
+        <label>Дополнительная информация</label>
+        <textarea rows="2">Возьмите паспорт. Для очного доклада бейдж выдадут на регистрации.</textarea>
+        <div class="row" style="margin-top:14px;gap:10px">
+          <button class="btn btn-pri">Сохранить</button>
+          <button class="btn btn-danger">Отменить мероприятие</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="screen admin" id="p-a-form" data-role="admin" data-nav="events">
     <div class="wrap">
       <p class="place"><a class="linkish" onclick="go('p-a-list')">← к мероприятиям</a></p>
       <div class="panel form" id="event-create">
         <h3>Новое мероприятие</h3>
         <p class="place">Сохранение публикует мероприятие и открывает запись.</p>
+        <label>Тип</label>
+        <select class="js-kind">
+          <option value="dod">День открытых дверей</option>
+          <option value="conference">Конференция</option>
+        </select>
+        <div class="js-conf-more cond-box" hidden>
+          <label>Секции (каждая с новой строки)</label>
+          <textarea rows="3" placeholder="Программная инженерия и автономные интеллектуальные системы"></textarea>
+        </div>
         <label>Название</label>
         <input placeholder="День открытых дверей ЛЭТИ" />
+        <label>Целевая аудитория</label>
+        <select class="js-aud">
+          <option value="school">Школьники</option>
+          <option value="student">Студенты</option>
+          <option value="both">Школьники и студенты</option>
+        </select>
+        <div class="js-grades">
+          <label>Класс</label>
+          <select>
+            <option>Все классы</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+          </select>
+        </div>
         <label>Описание</label>
         <textarea rows="4" placeholder="Что будет, для кого, как пройти"></textarea>
+        <label>Дополнительная информация</label>
+        <textarea rows="2" placeholder="Например: не забудьте паспорт. Текст увидят на карточке."></textarea>
         <label>Баннер</label>
         <label class="banner-drop">
           <input type="file" accept="image/*" />
@@ -624,20 +1279,42 @@
           <option>Нельзя</option>
           <option>Можно</option>
         </select>
-        <label>Баллы</label>
-        <select class="js-points-on">
-          <option value="no">Не дают</option>
-          <option value="yes">Дают</option>
-        </select>
-        <div class="js-points-more cond-box" hidden>
-          <label>Сколько баллов</label>
-          <input type="number" placeholder="12" />
-          <label>При каком условии</label>
-          <select>
-            <option>После подтверждения входа</option>
-            <option>После входа во все дни проведения</option>
-            <option>Другое — указать</option>
+        <div class="js-points-block">
+          <label>Баллы</label>
+          <select class="js-points-on">
+            <option value="no">Не дают</option>
+            <option value="yes">Дают</option>
           </select>
+          <div class="js-points-more cond-box" hidden>
+            <label>Сколько баллов</label>
+            <input type="number" placeholder="12" />
+            <label>При каком условии</label>
+            <select>
+              <option>После подтверждения входа</option>
+              <option>После входа во все дни проведения</option>
+              <option>Другое — указать</option>
+            </select>
+          </div>
+        </div>
+        <div class="js-coins-wrap" hidden>
+          <label>ЛЭТИ-КОИНы</label>
+          <select class="js-coins-on">
+            <option value="no">Не выдаются</option>
+            <option value="yes">Выдаются</option>
+          </select>
+          <div class="js-coins-more cond-box" hidden>
+            <label>Количество</label>
+            <input type="number" min="1" placeholder="2" />
+            <label>Условие выдачи</label>
+            <input placeholder="После подтверждения явки" />
+            <label>Серия сертификата (идентификатор мероприятия)</label>
+            <input placeholder="NNF-2026" />
+            <label>Форма выдачи</label>
+            <select>
+              <option value="auto">Автоматически (после явки / QR)</option>
+              <option value="admin">Администратором (XLSX или вручную)</option>
+            </select>
+          </div>
         </div>
         <label>Сертификат</label>
         <select class="js-cert-on">
@@ -700,13 +1377,22 @@
   <section class="screen admin" id="p-a-attend" data-role="admin" data-nav="attend">
     <div class="wrap">
       <h3>Посещаемость</h3>
-      <label class="event-pick full">Мероприятие
-        <select>
-          <option selected>ДОД ЛЭТИ · 14 декабря</option>
-          <option>Вечер факультетов · 21 декабря</option>
-          <option>Мастер-классы · 18 января</option>
-        </select>
-      </label>
+      <div class="filter-bar attend-filters">
+        <label>Мероприятие
+          <select>
+            <option selected>ДОД ЛЭТИ · 14 декабря</option>
+            <option>Вечер факультетов · 21 декабря</option>
+            <option>Мастер-классы · 18 января</option>
+          </select>
+        </label>
+        <label>Аудитория
+          <select>
+            <option>Все</option>
+            <option>Школьники</option>
+            <option>Студенты</option>
+          </select>
+        </label>
+      </div>
       <div class="toolbar split">
         <input class="search-wide" placeholder="Поиск по ФИО" />
         <div class="toolbar-right">
@@ -940,6 +1626,15 @@
       </div>
 
       <div class="stats-grid">
+        <div class="panel span2">
+          <h3>Самые популярные мероприятия</h3>
+          <p class="place">По числу записей за выбранный период</p>
+          <div class="hbar"><span class="hbar-lab">1. ДОД ЛЭТИ · 714</span><div class="track"><i style="width:100%"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">2. Наука настоящего и будущего · 186</span><div class="track"><i class="ok" style="width:26%"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">3. Вечер факультетов · 400</span><div class="track"><i class="warn" style="width:56%"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">4. ДОД весна · 640</span><div class="track"><i style="width:89%"></i></div></div>
+          <div class="hbar"><span class="hbar-lab">5. Мастер-классы · 186</span><div class="track"><i class="ok" style="width:26%"></i></div></div>
+        </div>
         <div class="panel">
           <h3>Записи по дням</h3>
           <p class="place">Линейный график · пик 13 декабря, перед ДОД</p>
@@ -1054,6 +1749,156 @@
     </div>
   </section>
 
-  <script src="app.js?v=acts1"></script>
+  <section class="screen admin" id="p-a-changes" data-role="admin" data-nav="changes">
+    <div class="wrap">
+      <h3>Заявки</h3>
+      <div class="pills" style="margin:12px 0 16px">
+        <button class="pill on">На рассмотрении</button>
+        <button class="pill">Одобренные</button>
+        <button class="pill">Отклонённые</button>
+      </div>
+      <div class="panel">
+        <table>
+          <thead><tr><th>Дата</th><th>ФИО</th><th>Поля</th><th></th></tr></thead>
+          <tbody>
+            <tr>
+              <td>12.10.2026</td>
+              <td>Фамилия Имя Отчество</td>
+              <td>телефон, школа</td>
+              <td><button class="btn btn-pri" onclick="go('p-a-change')">Открыть</button></td>
+            </tr>
+            <tr>
+              <td>11.10.2026</td>
+              <td>Фамилия Имя Отчество</td>
+              <td>email</td>
+              <td><button class="btn btn-pri" onclick="go('p-a-change')">Открыть</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-change" data-role="admin" data-nav="changes">
+    <div class="wrap">
+      <p class="place"><a class="linkish" onclick="go('p-a-changes')">← к заявкам</a></p>
+      <h3>Заявка · Фамилия Имя Отчество</h3>
+      <div class="cols">
+        <div class="panel">
+          <h3>Сейчас</h3>
+          <p><strong>Телефон</strong><br />+7 921 000-00-00</p>
+          <p><strong>Школа</strong><br />ГБОУ лицей № 239</p>
+        </div>
+        <div class="panel note-panel">
+          <h3>Черновик после одобрения</h3>
+          <p><strong>Телефон</strong><br />+7 911 111-22-33</p>
+          <p><strong>Школа</strong><br />ГБОУ школа № 45</p>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Причина</h3>
+        <p>Сменила школу, ошибка в телефоне</p>
+        <div class="row" style="margin-top:14px;gap:10px">
+          <button class="btn btn-pri">Подтвердить</button>
+          <button class="btn btn-danger">Отменить</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-coins" data-role="admin" data-nav="coins">
+    <div class="wrap">
+      <h3>ЛЭТИ-КОИНы</h3>
+      <label class="event-pick full">Мероприятие
+        <select>
+          <option selected>День открытых дверей ФКТИ</option>
+        </select>
+      </label>
+      <div class="panel">
+        <h3>Выдано</h3>
+        <table>
+          <thead><tr><th>Номер</th><th>ФИО</th><th>Дата</th></tr></thead>
+          <tbody>
+            <tr><td>FKTI-2026-0001</td><td>Фамилия Имя Отчество</td><td>12.12.2026</td></tr>
+            <tr><td>FKTI-2026-0002</td><td>Фамилия Имя Отчество</td><td>12.12.2026</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="panel form">
+        <div class="hrow">
+          <h3>Выдать</h3>
+          <label class="check"><input type="checkbox" class="js-coin-all" /> Выбрать всех</label>
+        </div>
+        <input class="search-wide" placeholder="Поиск по ФИО или email" style="margin-bottom:12px" />
+        <div class="pick-list">
+          <label class="check-row"><span>Фамилия Имя Отчество<small class="place">email@etu.ru</small></span><input type="checkbox" class="js-coin-st" /></label>
+          <label class="check-row"><span>Фамилия Имя Отчество<small class="place">email@etu.ru</small></span><input type="checkbox" class="js-coin-st" /></label>
+          <label class="check-row"><span>Фамилия Имя Отчество<small class="place">email@etu.ru</small></span><input type="checkbox" class="js-coin-st" /></label>
+          <label class="check-row"><span>Фамилия Имя Отчество<small class="place">email@etu.ru</small></span><input type="checkbox" class="js-coin-st" /></label>
+          <label class="check-row"><span>Фамилия Имя Отчество<small class="place">email@etu.ru</small></span><input type="checkbox" class="js-coin-st" /></label>
+        </div>
+        <label>Или загрузить файл</label>
+        <input type="file" accept=".xlsx" />
+        <label>Количество баллов</label>
+        <input type="number" value="2" />
+        <button class="btn btn-pri" style="margin-top:12px">Выдать</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="screen admin" id="p-a-diplomas" data-role="admin" data-nav="events">
+    <div class="wrap">
+      <p class="place"><a class="linkish" onclick="go('p-a-conf')">← к карточке конференции</a></p>
+      <h3>Дипломы · Наука настоящего и будущего</h3>
+      <div class="panel form">
+        <h3>Шаблоны</h3>
+        <p class="place">В шаблон подставятся ФИО, секция и тема доклада.</p>
+        <label>Шаблон I степени</label>
+        <input type="file" />
+        <label>Шаблон II степени</label>
+        <input type="file" />
+        <label>Шаблон III степени</label>
+        <input type="file" />
+      </div>
+      <div class="panel form">
+        <label>Секции конференции</label>
+        <select>
+          <option>Информационные радиотехнические системы и устройства</option>
+          <option>Информатика и управление в технических системах и ВТ</option>
+          <option>Программная инженерия и автономные интеллектуальные системы</option>
+          <option>Искусственный интеллект в прикладных областях</option>
+          <option>Алгоритмическая математика</option>
+          <option>Управление и обработка информации</option>
+          <option>Приборостроение</option>
+          <option>Лингвистика</option>
+          <option>Электроника, нанотехнологии, наноматериалы</option>
+          <option>Системный анализ и информационная безопасность</option>
+          <option>Электрические системы, привод, автоматика и электротехнологии</option>
+          <option>Биотехнические системы и технологии</option>
+          <option>Техносферная безопасность</option>
+          <option>Реклама и связи с общественностью</option>
+          <option>Современные тренды управления качеством и цифровая экономика</option>
+          <option>Инновационное проектирование: от реальных объектов к цифровым двойникам.</option>
+        </select>
+      </div>
+      <div class="deg-grid" id="deg-grid">
+        <div class="panel" data-deg="1">
+          <div class="hrow"><h3>I степень</h3><label class="check"><input type="checkbox" class="js-deg-all" data-deg="1" /> Выбрать всех</label></div>
+          <div class="js-deg-list"></div>
+        </div>
+        <div class="panel" data-deg="2">
+          <div class="hrow"><h3>II степень</h3><label class="check"><input type="checkbox" class="js-deg-all" data-deg="2" /> Выбрать всех</label></div>
+          <div class="js-deg-list"></div>
+        </div>
+        <div class="panel" data-deg="3">
+          <div class="hrow"><h3>III степень</h3><label class="check"><input type="checkbox" class="js-deg-all" data-deg="3" /> Выбрать всех</label></div>
+          <div class="js-deg-list"></div>
+        </div>
+      </div>
+      <button class="btn btn-pri">Выдать дипломы</button>
+    </div>
+  </section>
+
+  <script src="app.js?v=req29"></script>
 </body>
 </html>
