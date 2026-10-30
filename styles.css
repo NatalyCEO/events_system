@@ -543,6 +543,7 @@ input.mini { width: 72px; border: 1px solid var(--line); border-radius: 8px; pad
 }
 .admin-filters { grid-template-columns: 1.4fr .8fr; align-items: end; }
 .attend-filters { grid-template-columns: 1.6fr .7fr; align-items: end; margin-bottom: 12px; }
+.diploma-filters { grid-template-columns: 1fr; align-items: end; }
 .drop-box {
   display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
   min-height: 168px; padding: 22px; border-radius: 18px; cursor: pointer;
