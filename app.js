@@ -85,7 +85,7 @@ function applicantFooter() {
         </div>
         <div>
           <h4>Приёмная комиссия</h4>
-          <a href="tel:+78123258705">+7 812 325-87-05</a>
+          <a href="tel:+78123258705">+7 812 655-13-57</a>
           <a href="mailto:prcom@etu.ru">prcom@etu.ru</a>
           <a class="foot-vk" href="https://vk.ru/vleti" target="_blank" rel="noopener">${vkIcon()}Поступающим на 1 курс</a>
           <a class="foot-vk" href="https://vk.ru/eltech_magister" target="_blank" rel="noopener">${vkIcon()}Поступающим в магистратуру</a>
